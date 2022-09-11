@@ -2,53 +2,6 @@
 
 ### 3.6 Gestión programática del Cloud
 
-Hasta ahora hemos estado trabajando con las herramientas de gestión nativas de la nube de Google Cloud. Para ello, como ha sido costumbre en todos y cada uno de los QLs, hemos usado `gcloud` para la creación y destrucción de recursos, desde `buckets` en Google Cloud Storage, hasta `compute instances`, `firewall rules` o incluso `datasets` y `tables` en Google **BigQuery**. Y esto son muy buenas noticias, porque casi sin darnos cuenta, ya hemos estado haciendo una gestión programática de la nube!
-
-No obstante, a pesar de lo útil que nos ha sido hasta ahora, las soluciones que hemos creado hasta ahora con la conveniencia del uso inmediato de Google SDK no son escalables, dado que han estado muy ligadas a nuestros casos de estudio particulares. Además, cada uno de susodichos scripts viven por separado y no hay (como admin) una forma sencilla de tener una visión general de todos los despliegues existentes siguiendo este método. Por ejemplo, ¿qué ocurriría si en lugar de tener un despliegue diario a GKE tuviéramos cientos o incluso miles de ellos, como puede ser el caso de una compañía tecnológica?. En tal caso, tendríamos que gestionar con scripts manuales cientos de procesos de despliegue en diferentes entornos de desarrollo, y esto evidentemente sería seguramente imposible. No obstante, existen herramientas que nos harán mucho más sencilla la gestión de nuestra infraestructura de una forma programática cumpliendo los 12 factores, y por tanto convirtiendo nuestra infraestructura en código "cloud native". En el mundo GCP tenemos dos opciones:
-
-* Google Cloud [Deployment Manager](https://cloud.google.com/deployment-manager): Es la solución propuesta por Google para la gestión de infraestructura con código, automatizando la creación y la gestión de los recursos cloud. Dicha gestión 
-* [Terraform](https://www.terraform.io/): Es una herramienta *open source* para la gestión de infraestructura con código que nos proporciona una línea de comandos independiente del proveedor de nube. 
-
-Aunque vamos a ver un ejemplo de cada uno de estas posibilidades, es cierto que para evitar la dependencia exclusiva del proveedor de Google, muchas empresas han optado por gestionar sus nubes con Terraform, por su independencia y por la posibilidad de abstraernos del proveedor, con las ventajas que ello conlleva en el futuro si tuviéramos que migrar de una nube a otra por ejemplo.
-
-##### Deployment manager
-
-Antes de proceder a un ejemplo, tenemos que asegurarnos que tenemos activada las siguientes APIs en nuestro proyecto:
-
-* Compute Engine API
-* Cloud Deploy API
-
-El primer paso para tener un *pipeline* de despliegue y gestión de infraestructura con Cloud Deploy es codificar nuestro manifiesto de configuración, que será tipo YAML. En este archivo de configuración es donde especificaremos todas las variables de configuración de los diferentes recursos de infraestructura que queremos crear. Esto será siempre especificado en una sección del fichero YAML  que se denominará `resources`. Colgando de dicha sección, tendremos tantas sub-secciones como recursos queramos reservar, listados con un guión, y siempre comenzando con su nombre, campo `name`. Un ejemplo básico de un prototipo de YAML sería:
-
-```yaml
-resources:
-- name: the-first-vm
-  type: compute.v1.instance
-  properties:
-  	...
-- name: the-second-vm
-  type: compute.v1.instance
-  properties:
-		...
-```
-
-Donde, por ejemplo, estaríamos indicando la creación de dos VMs, cuyas propiedades específicas hemos dejado para el QL correspondiente.
-
-Ahora que ya tenemos una configuración de despliegue, ya podemos crear el susodicho despliegue. Para ello vamos a usar:
-
-```shell
-$ gcloud deployment-manager deployments create DEPLOYMENT_NAME \
-		--config CONFIGURATION_FILE_NAME.yaml
-```
-
-Lo que creará un *deployment* con nombre `DEPLOYMENT_NAME` a partir del fichero `CONFIGURATION_FILE.yaml`.
-
-Aunque a primera vista puede parecer que lo realizado es idéntico a lo ya estudiado y hecho con el uso directo de `gcloud` para cada uno de los recursos, Cloud Deploy permite la creación de templates de despliegues re-utilizables para otros despliegues, eliminando por tanto la especificidad de los scripts ad-hoc. Además, Cloud Deploy es auditable, además de brindarnos la comodidad de tener un portal de monitorización de despliegues. Por ejemplo, tras el despliegue del manifiesto con dos VMs, tendremos en nuestro portal web algo como la siguiente imagen:
-
- <img src="/Users/mduranol/Dropbox/Root/Home/Documents/ICAI/course-2021/teaching/ASR/theory/images/deployment-manager.png" alt="deployment-manager" style="zoom:67%;" />
-
-Para un conocimiento más profundo de las múltiples opciones de Deployment Manager, podemos acudir a la documentación oficial aquí.
-
 ##### Terraform
 
 Como hemos comentado, Terraform es una herramienta alternativa que ha ganado mucha tracción en los últimos años en el ámbito de la gestión de infraestructura como código versionado. Una ventaja indiscutible de Terraform es que nos brinda la posibilidad de tratar con un lenguaje unificado las diferentes infraestructuras que podemos tener en distintas nubes públicas (y privadas), e.g. en Google Cloud, Microsoft Azure y AWS.
