@@ -34,10 +34,10 @@
   * Proveedor Cloud (Cloud Provider):
     * La compañía/organización que provee la infraestructura tecnológica cloud
     * El proveedor cloud es responsable del mantenimiento de la infraestructura así como del cumplimiento con los acuerdos de disponibilidad (SLA, del inglés *Service-Level Agreement*) con el consumidor 
-  * Usuario Cloud (Cloud Consumer): 
+  * Usuario/Desarrollador Cloud (Cloud Consumer/Developer): 
     * Es la compañía/organización/persona que firma un acuerdo con el cloud provider para usar los servicios IT ofertados por el proveedor. 
     * Por lo general, el usuario cloud usará los servicios IT del proveedor cloud correspondiente a través de un conjunto de softwares intermediarios (del proveedor) generalmente conocido como *cloud service consumer* (CSC)
-  * Administrador Cloud (Cloud Resource Administrator):
+  * Operación/Administrador Cloud (Cloud Resource Administrator/Operator):
     * Es la compañía/organización/persona que se encarga de la administración de los servicios basados en la infraestructura cloud (incluyendo los propios servicios cloud ofertados por el proveedor). 
     * Puede ser o no parte de la entidad consumidora, ya que podría tratarse de una compañía externa al consumidor que se ha contratado con el cometido de administrar los servicios creados por el consumidor en la infraestructura cloud
   * Auditor Cloud (Cloud Auditor): 
