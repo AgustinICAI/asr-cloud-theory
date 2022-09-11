@@ -107,10 +107,6 @@ Si el plan se ha generado correctamente, Terraform se esperará a la confirmaci�
 
 Para ver Terraform en acción ir al QL correspondiente de ésta sección. 
 
-💻 **QuickLab VII: Deployment Manager**
-
-* El objetivo de este Lab es el de presentar las posibilidades ofrecidas por [Google Cloud Deployment Manager](https://cloud.google.com/deployment-manager/). En particular, vamos a crear un manifiesto de configuración que enuncia la creación de dos máquinas virtuales. El código y sumario de este QuickLab se puede encontrar en el siguiente: [link](https://github.com/migduroli/asr-cloud/tree/main/11-deployment-manager).
-
 💻 **QuickLab VIII: Terraform**
 
-* El objetivo de este Lab es el de presentar las posibilidades ofrecidas por [Terraform](https://www.terraform.io/). En particular, vamos a crear un fichero de configuración que enuncia la creación de una máquina virtual. El código y sumario de este QuickLab se puede encontrar en el siguiente: [link](https://github.com/migduroli/asr-cloud/tree/main/12-terraform).
+* El objetivo de este Lab es el de presentar las posibilidades ofrecidas por [Terraform](https://www.terraform.io/). En particular, vamos a crear un fichero de configuración que enuncia la creación de una máquina virtual. El código y sumario de este QuickLab se puede encontrar en el siguiente: [link](****PENDIENTE PRACTICA TERRAFORM****).
