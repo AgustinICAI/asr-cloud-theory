@@ -32,7 +32,7 @@ https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html **
 
 Tal como se ve es un listado de IPs que se agrupan, por ejemplo, aquí el grupo de servidores 'desarrollo' tiene los servidores 192.168.15.1 y 192.168.15.2.
 
-### Máquinas - Configurando los certificados de seguridad
+#### Máquinas - Configurando los certificados de seguridad
 
 ```shell
 ssh-keygen -f ./ansible
@@ -41,7 +41,7 @@ ssh-copy-id 192.168.15.1
 #Esto nos pedirá el usuario SSH del servidor y copiará el certificado. Una vez todo instalado y configurado podemos probar de hacer un ping, a ver si funciona:
 ```
 
-### En el caso que trabajemos con un proveedor cloud, por defecto no existirá (ni debe existir) conectividad con la máquina. Es necesario:
+#### En el caso que trabajemos con un proveedor cloud, por defecto no existirá (ni debe existir) conectividad con la máquina. Es necesario:
 1. Obtener acceso directo a la máquina. Puede ser desde un cloud shell o desde tu equipo.
 2. En caso de hacerlo desde tu equipo será necesario abrir las reglas firewall que permitan este acceso.
 3. Añadir la clave creada en el paso anterior en la consola del proveedor para poder acceder a la máquina. 
@@ -61,17 +61,17 @@ ansible  <servidor/grupo/pattern> -m <módulo> -a <argumentos>
 
 De esta manera podemos ejecutar cantidad de cosas:
 
-### Reiniciar el servicio httpd en los servidores de  preproduccion
+#### Reiniciar el servicio httpd en los servidores de  preproduccion
 ```shell
 ansible preproduccion -m service -a "name=httpd state=restarted"
 ```
 
-# Copiar el fichero 'hola.txt' a los servidores de 'preproduccion' y 'produccion'
+#### Copiar el fichero 'hola.txt' a los servidores de 'preproduccion' y 'produccion'
 ```shell
 ansible preproduccion:produccion -m copy -a "src=~/prueba/hola.txt dest=/opt/hola.txt"
 ```
 
-# Ejecutar '/bin/echo hello' en el servidor '192.168.15.1'. Si no ponemos módulo interpreta que el módulo es 'shell'
+#### Ejecutar '/bin/echo hello' en el servidor '192.168.15.1'. Si no ponemos módulo interpreta que el módulo es 'shell'
 ```shell
 ansible 192.168.15.1 -m shell -a "/bin/echo hello"
 ansible 192.168.15.1 -a "/bin/echo hello"
