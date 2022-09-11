@@ -70,8 +70,6 @@ ansible preproduccion:produccion -m copy -a "src=~/prueba/hola.txt dest=/opt/hol
 # Ejecutar '/bin/echo hello' en el servidor '192.168.15.1'. Si no ponemos módulo interpreta que el módulo es 'shell'
 ansible 192.168.15.1 -m shell -a "/bin/echo hello"
 ansible 192.168.15.1 -a "/bin/echo hello"
-En fin, así­ de fácil es montarte un sistema automatizado con Ansible, tenéis la documentación completa aquí­ http://docs.ansible.com/ .
+Así de fácil es montarte un sistema automatizado con Ansible, tenéis la documentación completa aquí http://docs.ansible.com/ .
 
 
-
-## Lanzando playbooks
