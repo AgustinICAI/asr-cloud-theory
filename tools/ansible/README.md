@@ -61,16 +61,22 @@ ansible  <servidor/grupo/pattern> -m <módulo> -a <argumentos>
 
 De esta manera podemos ejecutar cantidad de cosas:
 
-# Reiniciar el servicio httpd en los servidores de  preproduccion
+### Reiniciar el servicio httpd en los servidores de  preproduccion
+```shell
 ansible preproduccion -m service -a "name=httpd state=restarted"
+```
 
 # Copiar el fichero 'hola.txt' a los servidores de 'preproduccion' y 'produccion'
+```shell
 ansible preproduccion:produccion -m copy -a "src=~/prueba/hola.txt dest=/opt/hola.txt"
+```
 
 # Ejecutar '/bin/echo hello' en el servidor '192.168.15.1'. Si no ponemos módulo interpreta que el módulo es 'shell'
+```shell
 ansible 192.168.15.1 -m shell -a "/bin/echo hello"
 ansible 192.168.15.1 -a "/bin/echo hello"
-En fin, así­ de fácil es montarte un sistema automatizado con Ansible, tenéis la documentación completa aquí­ http://docs.ansible.com/ .
+```
+En fin, así de fácil es montarte un sistema automatizado con Ansible, tenéis la documentación completa aquí­ http://docs.ansible.com/ .
 
 
 
