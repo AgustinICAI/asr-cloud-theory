@@ -1,6 +1,6 @@
 # 3. Cloud Computing
 
-### 3.5 Diseño y despliegue de aplicaciones nativas Cloud
+### 3.4 Diseño y despliegue de aplicaciones nativas Cloud
 
 Ahora que tenemos un buen conocimiento de lo que nos oferta una nube (bien sea pública o privada), vamos a proceder con un salto gradual desde el desarrollo local (típicamente monolítico) hasta el desarrollo nativo en nube (*cloud native*) en el que se aprovecharán todo el potencial ofertado por el *cloud computing*.
 
@@ -17,7 +17,7 @@ Este paradigma de desarrollo suele ir acompañado del uso de las siguientes tecn
 * Funciones (FaaS) y plataformas *serverless* ([Serverless computing](https://en.wikipedia.org/wiki/Serverless_computing))
 * Integración continua y Entrega continua ([Continuos Integration and Continuos Delivery](https://en.wikipedia.org/wiki/CI/CD) [CI/CD])
 
-<img src="/Users/mduranol/Dropbox/Root/Home/Documents/ICAI/course-2021/teaching/ASR/theory/images/cloud-native.png" alt="cloud-native" style="zoom:67%;" />
+<img src="images/cloud-native.png" alt="cloud-native" style="zoom:67%;" />
 
 
 
@@ -27,7 +27,9 @@ Uno de las características fundamentales que diferencia una aplicación nativa 
 
 De la contenerización ya hemos hablado extendidamente en el capítulo anterior cuando tratamos la virtualización de sistemas operativos, tanto de ventajas como desventajas. Sin embargo, es bueno que subrayemos la importancia de dicha tecnología en lo que a la **reproducibilidad** se refiere. El contenerizar una aplicación con todas las dependencias requeridas ha revolucionado por completo el paradigma del desarrollo en servidores. Previamente a la contenerización, la estabilización de entornos de desarrollo podía llegar a ser algo bastante tedioso, incluso convertirse en un problema a la hora del poder desarrollar, llegando en los casos más extremos a  convertirse en un factor de entorpecimiento a la hora de llevar a producción nuevos desarrollos, por no ser compatibles estos con las dependencias instaladas en el entorno productivo, sobre todo en proyectos de larga envergadura. La contenerización ataca una de las caras de este problema y es el aislamiento de dependencias de una aplicación, lo cual hace posible que su desarrollo sea completamente reproducible en cualquier entorno de trabajo, bien sea testing, desarrollo o productivo.
 
-La arquitectura basada en microservicios constituye otro cambio de paradigma en el desarrollo de software, y consiste en construir una aplicación como un conjunto de pequeños [servicios](https://es.wikipedia.org/wiki/Servicio_(arquitectura_de_sistemas)), los cuales se ejecutan en su propio [proceso](https://es.wikipedia.org/wiki/Proceso_(informática)) y se comunican con mecanismos ligeros (normalmente una [API](https://es.wikipedia.org/wiki/Interfaz_de_programación_de_aplicaciones) de [recursos HTTP](https://es.wikipedia.org/wiki/Hypertext_Transfer_Protocol)). Cada "micro"-servicio se encarga de implementar una funcionalidad completa de negocio, de manera independiente y completamente autónoma. Así, cada micro-servicio puede ser desplegado de forma independiente y puede estar programado en distintos lenguajes y usar diferentes tecnologías de almacenamiento de datos. Esta filosofía de desarrollo evidentemente rompe con la filosofía tradicional monolítica, orientada a poyectos, que no a funcionalidades. La filosofía monolítica conlleva una serie de restricciones bastante importantes a la hora del desarrollo, como es por ejemplo el hecho de forzar un único lenguaje de programación o compatibilidad de librerías para todo un proyecto, lo cuál se convierte en algo más y más complicado a medida que un proyecto crece en complejidad (lo cuál es natural en la vida real). Por contra, los microservicios proponen como solución que cada funcionalidad de un proyecto ha de ser identificada y aislada como un proceso/servicio independiente, atendiendo al principio de única responsabilidad (*single-responsibility principle*). Esto ayuda de antemano a desacoplar las diferentes unidades de un proyecto, lo que a su vez es más beneficioso a la hora de renovar, refactorizar o reinventar partes del mismo, sin tener que atender a más preocupación que la interfaz programática de comunicación (API).
+La arquitectura basada en microservicios constituye otro cambio de paradigma en el desarrollo de software, y consiste en construir una aplicación como un conjunto de pequeños [servicios](https://es.wikipedia.org/wiki/Servicio_(arquitectura_de_sistemas)), los cuales se ejecutan en su propio [proceso](https://es.wikipedia.org/wiki/Proceso_(informática)) y se comunican con mecanismos ligeros (normalmente una [API](https://es.wikipedia.org/wiki/Interfaz_de_programación_de_aplicaciones) de [recursos HTTP](https://es.wikipedia.org/wiki/Hypertext_Transfer_Protocol)). Cada "micro"-servicio se encarga de implementar una funcionalidad completa de negocio, de manera independiente y completamente autónoma. Así, cada micro-servicio puede ser desplegado de forma independiente y puede estar programado en distintos lenguajes y usar diferentes tecnologías de almacenamiento de datos. Esta filosofía de desarrollo evidentemente rompe con la filosofía tradicional monolítica, orientada a poyectos, que no a funcionalidades. La filosofía monolítica conlleva una serie de restricciones bastante importantes a la hora del desarrollo, como es por ejemplo el hecho de forzar un único lenguaje de programación o compatibilidad de librerías para todo un proyecto, lo cuál se convierte en algo más y más complicado a medida que un proyecto crece en complejidad (lo cuál es natural en la vida real). Por contra, los microservicios proponen como solución que cada funcionalidad de un proyecto ha de ser identificada y aislada como un proceso/servicio independiente, atendiendo al principio de única responsabilidad (*single-responsibility principle*). 
+
+Esto ayuda de antemano a desacoplar las diferentes unidades de un proyecto, lo que a su vez es más beneficioso a la hora de renovar, refactorizar o reinventar partes del mismo, sin tener que atender a más preocupación que la interfaz programática de comunicación (API).
 
 | Ventajas                                                     | Inconvenientes                                        |
 | ------------------------------------------------------------ | ----------------------------------------------------- |
@@ -38,11 +40,43 @@ La arquitectura basada en microservicios constituye otro cambio de paradigma en 
 | Multi-idioma/plataforma/…                                    |                                                       |
 | Fácil de construir/probar/desplegar                          |                                                       |
 
- A continuación se muestra una figura en la que se comparan de manera esquemática las arquitecturas tradicionales *versus* las arquitecturas orientadas a microservicios.![soa-vs-microservices](/Users/mduranol/Dropbox/Root/Home/Documents/ICAI/course-2021/teaching/ASR/theory/images/soa-vs-microservices.png)
+ A continuación se muestra una figura en la que se comparan de manera esquemática las arquitecturas tradicionales *versus* las arquitecturas orientadas a microservicios.![soa-vs-microservices](images/soa-vs-microservices.png)
 
 
 
-#### Orquestación de contenedores: Kubernetes
+## 12 Factors
+
+#### I. Codebase
+One codebase tracked in revision control, many deploys
+#### II. Dependencies
+Explicitly declare and isolate dependencies
+#### III. Config
+Store config in the environment
+#### IV. Backing services
+Treat backing services as attached resources
+#### V. Build, release, run
+Strictly separate build and run stages
+#### VI. Processes
+Execute the app as one or more stateless processes
+#### VII. Port binding
+Export services via port binding
+#### VIII. Concurrency
+Scale out via the process model
+#### IX. Disposability
+Maximize robustness with fast startup and graceful shutdown
+#### X. Dev/prod parity
+Keep development, staging, and production as similar as possible
+#### XI. Logs
+Treat logs as event streams
+#### XII. Admin processes
+Run admin/management tasks as one-off processes
+
+
+
+
+
+
+## Orquestación de contenedores: Kubernetes
 
 Si prestamos suficiente atención a nuestro QuickLab (QL) I veremos que lo que realmente hemos hecho es preparar dos microservicios (cada uno con una responsabilidad única y bien definida, ver [*Single Responsibility Principle*](https://en.wikipedia.org/wiki/Single-responsibility_principle)) que posteriormente hemos desplegado en GCP. Cuando llegamos a este punto en el capítulo de virtualización vimos que ***en local*** podíamos "orquestar" (gestionar de manera conjunta y organizada un conjunto de) contenedores mediante el uso de [Docker Compose](https://docs.docker.com/compose/). Para ello se usaba **docker compose engine**, un comando de terminal que en última instancia dependía de un fichero (manifiesto) de configuración que se solía llamar `docker-compose.yaml` donde especificábamos los contenedores a crear/lanzar, sus configuraciones de red/puertos, además de su volúmenes etc. Un ejemplo sencillo era:
 

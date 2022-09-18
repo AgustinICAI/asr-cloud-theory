@@ -1,4 +1,4 @@
-Ansible es una plataforma para automatización IT super simple para hacer que el proceso de set-up y configuración sistemas sea industriazible a medida que el volumen de infraestructura crece.
+Ansible es una plataforma para automatización IT para hacer que el proceso de set-up y configuración sistemas sea industriazible a medida que el volumen de infraestructura crece.
 
 
 ## Instalación
