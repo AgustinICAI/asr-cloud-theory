@@ -44,44 +44,7 @@
     * Es una compañía/organización independiente (normalmente acreditada) que lleva a cabo revisiones regulares en relación a controles de seguridad, privacidad y continuidad de negocio.
     * El objetivo principal de este rol es el de generar un informe exhaustivo e independiente sobre el entorno cloud que ayude a identificar vulnerabilidades y puntos débiles, que habrán de ser subsanados en un plazo determinado, para fortalecer la relación de confianza entre el consumidor y el proveedor cloud.    
 
-* Normalmente, todo proveedor cloud ofrece una interfaz gráfica muy accesible y agradable para el usuario, así como interfaces programáticas (APIs) que permiten la automatización de tareas repetitivas
-
-* Ejemplo de la interfaz gráfica de usuario (portal web) de un proveedor cloud 
-
-  * Microsoft Azure:
-
-    <img src="images/azure-console.png" alt="azure-console" style="zoom:67%;" />
-
-  * Google Cloud Platform:
-  <img src="images/gcp-console-new.png" alt="gcp-console" style="zoom:67%;" />
-
-* Un ejemplo de interfaz programática ofertada por un proveedor cloud
-
-  * Azure CLI:
-
-    ```shell
-    $ az group create --name example-resource-group --location eastus
-    $ az vm create \
-        --resource-group example-resource-group \
-        --name example-instance \
-        --image UbuntuLTS \
-        --admin-username azureuser \
-        --generate-ssh-keys \
-        --public-ip-sku Standard
-    ```
-
-    Esta simple línea de código nos permite crear una VM con la última versión de **Ubuntu LTS**, especificando que el usuario **azureuser** será root-user, dentro de la región **eastus**, i.e. East US.
-
-  * Google SDK:
-
-    ```shell
-    $ gcloud compute instances create example-instance \
-    				--image-family=rhel-8 \
-    				--image-project=rhel-cloud \
-    				--zone=us-central1-a
-    ```
-
-    Esta simple línea de código nos permite crear una VM con **Red Hat Enterprise Linux 8**, en la región **US** (Estados Unidos) y zona **Central1-a**, que corresponde a: Council Bluffs, Iowa, North America.
+* Normalmente, todo proveedor cloud ofrece una interfaz gráfica muy accesible y agradable para el usuario, así como interfaces programáticas (APIs) que permiten la automatización de tareas repetitivas.
 
 * Las características diferenciadas de la nube son:
 

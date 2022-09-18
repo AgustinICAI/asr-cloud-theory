@@ -27,4 +27,4 @@ A modo de resumen:
 | Recursos “infinitamente” elásticos                           | Recursos elásticos finitos                                   |
 | Conectada a la Internet pública                              | Puede o no estar conectada a la Internet pública.            |
 
-### 
+

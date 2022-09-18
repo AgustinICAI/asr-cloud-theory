@@ -43,35 +43,32 @@ Esto ayuda de antemano a desacoplar las diferentes unidades de un proyecto, lo q
  A continuación se muestra una figura en la que se comparan de manera esquemática las arquitecturas tradicionales *versus* las arquitecturas orientadas a microservicios.![soa-vs-microservices](images/soa-vs-microservices.png)
 
 
+## Los 12 factores
 
-## 12 Factors
+“Twelve-factor app” es una metodología para el desarrollo de aplicaciones nativas en la nube cuyas características esenciales son: 
 
-#### I. Codebase
-One codebase tracked in revision control, many deploys
-#### II. Dependencies
-Explicitly declare and isolate dependencies
-#### III. Config
-Store config in the environment
-#### IV. Backing services
-Treat backing services as attached resources
-#### V. Build, release, run
-Strictly separate build and run stages
-#### VI. Processes
-Execute the app as one or more stateless processes
-#### VII. Port binding
-Export services via port binding
-#### VIII. Concurrency
-Scale out via the process model
-#### IX. Disposability
-Maximize robustness with fast startup and graceful shutdown
-#### X. Dev/prod parity
-Keep development, staging, and production as similar as possible
-#### XI. Logs
-Treat logs as event streams
-#### XII. Admin processes
-Run admin/management tasks as one-off processes
+- Formatos declarativos para la automatización de la configuración
+- Máxima portabilidad entre los diferentes entornos de ejecución
+- Despliegue en la nube, por lo que se obviará la necesidad de servidores y administración de sistemas
+- Minimizan las diferencias entre los entornos de desarrollo y producción
+- Posibilidad de escalado
 
+Los 12 factores son: 
 
+1. **Codebase**: Un código base sobre el que hacer el control de versiones y múltiples despliegues. 
+2. **Dependencies**: Declarar y aislar explícitamente las dependencias mediante un manifiesto. Nunca dependerá de las librerías ya instaladas en el sistema por defecto
+3. **Config**: Guardar la configuración en el entorno que pueda variar entre despliegues (producción o desarrollo, por ejemplo)
+4. **Backing services**: Tratar a los “backing services” como recursos conectables
+5. **Build, release, run**: Separar completamente la etapa de construcción de la etapa de ejecución
+6. **Processes**: Ejecutar la aplicación como uno o más procesos sin estado. Los procesos deben ser stateless y share-nothing. Cualquier información que necesite persistencia se debe almacenar en un backing service con estado (e.g., una base de datos). 
+7. **Port binding**: En entornos locales un servicio como un servidor web inicia en un puerto para todas las apps. En 12-factor apps, una capa de enrutamiento se encargará de gestionar los puertos de cada servicio
+8. **Concurrency**: Escalar mediante el modelo de procesos
+9. **Disposability**: Hacer el sistema más robusto intentando conseguir inicios rápidos y finalizaciones seguras. Las 12- factor apps deberán ser plenamente desechables en cualquier momento. 
+10. **Dev/prod parity**: Mantener desarrollo, preproducción y producción tan parecidos como sea posible 
+11. **Logs**: Tratar los historiales como una transmisión de eventos. 
+12. **Admin processes**: Ejecutar las tareas de gestión/administración como procesos que solo se ejecutan una vez. 
+
+“[Twelvefactor](https://12factor.net/)” recomienda lenguajes que proporcionan una consola del tipo REPL, ya que facilitan las tareas relacionadas con la ejecución de scripts
 
 
 
@@ -135,9 +132,9 @@ Como resumen visual:
 
 Para un entendimiento más profundo de los componentes del **control plane**, ver la [documentación oficial](https://kubernetes.io/es/docs/concepts/overview/components/).
 
-#### Kubernetes gestionado: Google App Engine (GAE)
+### Kubernetes gestionado: Google App Engine (GAE)
 
-Una vez hayamos experimentado un poco con K8s (e.g. haciendo los QLs III y IV) será cuestión de tiempo que lleguemos a la pregunta: ¿Cómo podría deshacerme de tanta gestión (programática) y centrarme en el desarrollo en el caso que mi objetivo central sea el producto? Si revisamos el material que hemos estudiado hasta ahora, la respuesta a tal pregunta tiene una realidad conocida como **PaaS**. En el contexto de GCP, el servicio que nos permite abstraernos de la gestión de la infraestructura y centrarnos en el desarrollo de Apps es conocido como [Google App Engine](https://cloud.google.com/appengine/docs/standard/python3/an-overview-of-app-engine) (GAE).
+Una vez hayamos experimentado un poco con K8s será cuestión de tiempo que lleguemos a la pregunta: ¿Cómo podría deshacerme de tanta gestión (programática) y centrarme en el desarrollo en el caso que mi objetivo central sea el producto? Si revisamos el material que hemos estudiado hasta ahora, la respuesta a tal pregunta tiene una realidad conocida como **PaaS**. En el contexto de GCP, el servicio que nos permite abstraernos de la gestión de la infraestructura y centrarnos en el desarrollo de Apps es conocido como [Google App Engine](https://cloud.google.com/appengine/docs/standard/python3/an-overview-of-app-engine) (GAE).
 
 GAE nos brinda la oportunidad de las bondades de K8s, tales como el autoescalado, sin que tengamos que ser nosotros los que nos preocupemos por gestionar el cluster. Así, GAE se puede entender como un cluster de K8s gestionado automáticamente por Google. Es por ello por lo que todos nuestros esfuerzos se pueden centrar única y exclusivamente en el desarrollo del software (app), dejando la gestión del cluster a Google (sin más que especificar algunas propiedades del cluster para controlar costes, como pueden ser el máximo numero de instancias, etc.)
 
@@ -160,7 +157,7 @@ Una vez tengamos una versión inicial de nuestro aplicativo (app), podremos serv
 
 Para un mayor entendimiento de la diferencia entre ambos modelos, podemos ver la [documentación oficial](https://cloud.google.com/appengine/docs/the-appengine-environments).
 
-#### Aplicaciones Serverless: El espíritu cloud native
+### Aplicaciones Serverless: El espíritu cloud native
 
 Finalmente, incluso deshaciéndonos de la responsabilidad de mantener el cluster de K8s mediante el uso de GAE, tenemos una limitación y es que seguimos teniendo que mantener un mínimo de 1 instancia (nodo) funcionando 24/7. Sin embargo, nuestro objetivo último siempre ha sido el llegar a una arquitectura que sea lo más dinámica posible, con la idea en mente de escalar hasta cero instancias si fuera posible, de manera que solo pagásemos realmente por aquello que usamos. Y este es precisamente el objetivo de las dos últimos servicios de hosting de aplicativos que vamos a ver, que son:
 
@@ -183,7 +180,7 @@ Las ventajas principales son:
 * Seguridad integrada a nivel de funciones y por función que se basa en el principio de privilegio mínimo
 * Capacidades de red clave para situaciones híbridas y de múltiples nubes
 
-##### Functions as a Service (FaaS): Google Cloud Functions
+### Functions as a Service (FaaS): Google Cloud Functions
 
 Cloud functions nos brinda la oportunidad única de ir directamente de código a aplicativo serverless sin necesidad de contenerización.
 
@@ -191,44 +188,11 @@ Cloud functions nos brinda la oportunidad única de ir directamente de código a
 
 Cloud run se puede entender como el paso intermedio entre GCF y GAE, i.e., con GCR podremos montar un aplicativo serverless cuando nuestro aplicativo ya esté contenerizado.
 
-#### Los 12 factores
 
-“Twelve-factor app” es una metodología para el desarrollo de aplicaciones nativas en la nube cuyas características esenciales son: 
-
-- Formatos declarativos para la automatización de la configuración
-- Máxima portabilidad entre los diferentes entornos de ejecución
-- Despliegue en la nube, por lo que se obviará la necesidad de servidores y administración de sistemas
-- Minimizan las diferencias entre los entornos de desarrollo y producción
-- Posibilidad de escalado
-
-Los 12 factores son: 
-
-1. **Codebase**: Un código base sobre el que hacer el control de versiones y múltiples despliegues. 
-2. **Dependencies**: Declarar y aislar explícitamente las dependencias mediante un manifiesto. Nunca dependerá de las librerías ya instaladas en el sistema por defecto
-3. **Config**: Guardar la configuración en el entorno que pueda variar entre despliegues (producción o desarrollo, por ejemplo)
-4. **Backing services**: Tratar a los “backing services” como recursos conectables
-5. **Build, release, run**: Separar completamente la etapa de construcción de la etapa de ejecución
-6. **Processes**: Ejecutar la aplicación como uno o más procesos sin estado. Los procesos deben ser stateless y share-nothing. Cualquier información que necesite persistencia se debe almacenar en un backing service con estado (e.g., una base de datos). 
-7. **Port binding**: En entornos locales un servicio como un servidor web inicia en un puerto para todas las apps. En 12-factor apps, una capa de enrutamiento se encargará de gestionar los puertos de cada servicio
-8. **Concurrency**: Escalar mediante el modelo de procesos
-9. **Disposability**: Hacer el sistema más robusto intentando conseguir inicios rápidos y finalizaciones seguras. Las 12- factor apps deberán ser plenamente desechables en cualquier momento. 
-10. **Dev/prod parity**: Mantener desarrollo, preproducción y producción tan parecidos como sea posible 
-11. **Logs**: Tratar los historiales como una transmisión de eventos. 
-12. **Admin processes**: Ejecutar las tareas de gestión/administración como procesos que solo se ejecutan una vez. 
-
-“[Twelvefactor](https://12factor.net/)” recomienda lenguajes que proporcionan una consola del tipo REPL, ya que facilitan las tareas relacionadas con la ejecución de scripts
 
 #### QuickLabs
 
 Para reforzar los conceptos que vamos introduciendo de manera teórica hemos diseñado varios ejemplos en los que iremos trabajando con la nube de Google (GCP). En este momento, tras haber introducido las ventajas e inconvenientes de la contenerización y los microservicios, es interesante que procedamos con los siguientes ejemplos:
-
-##### 💻 QuickLab I: Creación y despliegue de contenedores en GCP
-
-* Creación y despliegue de un microservicio con Flask que nos permite la inserción y borrado de registros mediante una API sencilla en una base de datos *in-memory* (redis). El objetivo de este ejemplo es el de mostrar la estructura típica de una aplicación con varios microservicios, y la gestión de su despliegue de manera programática (pero aún manual) en la nube mediate Google SDK. El código y sumario de este QuickLab pueden encontrarse en este [link]( https://github.com/**PENDING**/asr-cloud/tree/main/03-flask-redis).   
-
-##### 💻 QuickLab II: SuperMario auto-escalable
-
-* Creación y despliegue de una aplicación dada (como Docker Image) con autoescalado y balanceado de carga. El objetivo es ir un paso más allá del ejemplo anterior, y mostrar lo conveniente que es la contenerización de aplicaciones para su despliegue en una infraestructura autoescalable según la utilización del servicio. Para ello tendremos que crear un grupo de instancias gestionadas que se desplieguen con la imagen de la aplicación en el arranque, y que autoescalen a medida que sea necesario acorde a un umbral de utilización. Para servir la aplicación con una única IP a nuestros poténciales clientes, tendremos que crear un balanceado de carga (con *Cloud Load Balancer*) que hará la el enrutamiento correcto a la VM adecuada. El código y sumario de este QuickLab se puede encontrar en el siguiente: [link](https://github.com/**PENDING**/asr-cloud/tree/main/04-autoscaling-mario). 
 
 ##### 💻 QuickLab III: SuperMario con K8s
 
