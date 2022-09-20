@@ -5,7 +5,7 @@
 Existen tres tipos principales de "nube" (cloud computing):
 
 * Nuble pública
-* Nube privada
+* Nube privada = CPD
 * Nube híbrida
 
 Aunque en ocasiones se incluye también la combinación de todas ellas (**multi-cloud**) como una cuarta variante, la realidad es que es una combinación de las anteriores, por lo que nosotros no haremos susodicha distinción.
