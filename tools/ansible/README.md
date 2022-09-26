@@ -76,6 +76,7 @@ ansible preproduccion:produccion -m copy -a "src=~/prueba/hola.txt dest=/opt/hol
 ```shell
 ansible 192.168.15.1 -m shell -a "/bin/echo hello"
 ansible 192.168.15.1 -a "/bin/echo hello"
+```
 Así de fácil es montarte un sistema automatizado con Ansible, tenéis la documentación completa aquí http://docs.ansible.com/ .
 
 ## PLAYBOOKS
