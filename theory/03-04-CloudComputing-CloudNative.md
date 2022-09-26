@@ -56,7 +56,9 @@ Esto ayuda de antemano a desacoplar las diferentes unidades de un proyecto, lo q
 | Multi-idioma/plataforma/…                                    |                                                       |
 | Fácil de construir/probar/desplegar                          |                                                       |
 
- A continuación se muestra una figura en la que se comparan de manera esquemática las arquitecturas tradicionales *versus* las arquitecturas orientadas a microservicios.![soa-vs-microservices](images/soa-vs-microservices.png)
+ A continuación se muestra una figura en la que se comparan de manera esquemática las arquitecturas tradicionales *versus* las arquitecturas orientadas a microservicios.
+ 
+![soa-vs-microservices](images/soa-vs-microservices.png)
 
 
 ## Los 12 factores
