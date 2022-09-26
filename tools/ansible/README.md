@@ -36,9 +36,6 @@ Tal como se ve es un listado de IPs que se agrupan, por ejemplo, aquí el grupo 
 
 ```shell
 ssh-keygen -f ./ansible
-# Después tendremos que copia el certificado de seguridad a los distintos servidores:
-ssh-copy-id 192.168.15.1
-#Esto nos pedirá el usuario SSH del servidor y copiará el certificado. Una vez todo instalado y configurado podemos probar de hacer un ping, a ver si funciona:
 ```
 
 #### En el caso que trabajemos con un proveedor cloud, por defecto no existirá (ni debe existir) conectividad con la máquina. Es necesario:
