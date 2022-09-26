@@ -100,3 +100,7 @@ Permite a los administradores de sistemas y los equipos de DEVOPS la automatizac
 - Gestión inventarios
 - Consultar estado ejecuciones
 - API RESTful!!!!!!
+
+Si deseais montar un entorno de AWX en local, en el siguiente enlace se explica como realizarlo en local.
+
+https://github.com/ansible/awx/tree/devel/tools/docker-compose#clean-and-build-ui
