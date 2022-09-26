@@ -21,7 +21,23 @@ Este paradigma de desarrollo suele ir acompañado del uso de las siguientes tecn
 
 
 
-#### Contenerización y microservicios
+### Ventajas DEVOPS
+- Adecuado para time-to-market ajustado. 
+- En caso de startups o equipos específicos en grandes empresas, DEVOPS significa que quien desarrolla opera.
+- Para grandes empresas que se suele buscar perfiles DEVOPS específicos que trabajen conjuntamente con desarrollares y operaciones evitando que múltiples equipos se encarguen de las mismas tareas.
+- Mayor número de subidas e iteraciones.
+- Software a la larga tiende a tener buena calidad y seguro, ya que se automatizan test, test de seguridad, pruebas de rendimiento.
+- Se define unos estandares de como se construye y despliega.
+
+### Ventajas CICD
+- Cambios de código más pequeños
+- Mayor frecuencia de subidas y mayor velocidad de subidas
+- Más fiabilidad de las pruebas mediante pruebas automatizadas
+- Aumentar la transparencia y la responsabilidad del equipo.
+- NO SE REALIZAN ACCIONES MANUALES
+
+
+### Ventajas Contenerización y microservicios
 
 Uno de las características fundamentales que diferencia una aplicación nativa cloud de una aplicación tradicional es precisamente la contenerización y su infraestructura de microservicios.
 
