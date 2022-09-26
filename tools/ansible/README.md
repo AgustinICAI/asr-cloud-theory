@@ -1,13 +1,17 @@
 Ansible es una plataforma para automatización IT para hacer que el proceso de set-up y configuración sistemas sea industriazible a medida que el volumen de infraestructura crece.
 
+# Componentes
 
-## Instalación
+## ANSIBLE CLI
+
+
+### Instalación
 
 ```shell
 sudo apt-get install ansible
 ```
 
-## Inventario y primeras automatizaciones
+### Inventario y primeras automatizaciones
 
 Configurando el inventario de servidores en Ansible
 Ansible trabaja con un inventario de servidores. Este inventario se configura por defecto en '/etc/ansible/hosts' y tiene la siguiente forma:
@@ -74,3 +78,24 @@ ansible 192.168.15.1 -m shell -a "/bin/echo hello"
 ansible 192.168.15.1 -a "/bin/echo hello"
 Así de fácil es montarte un sistema automatizado con Ansible, tenéis la documentación completa aquí http://docs.ansible.com/ .
 
+## PLAYBOOKS
+Se trata de las plantillas que se utilizan para lanzar instrucciones ordenadas sin ningún tipo de interacción humana. Estas plantillas pueden ser tanto para crear infraestructura o/y interactuar con la infraestructura para la instalación/configuración de componentes.
+
+Los módulos de Ansible ejecutan tareas. Se pueden combinar una o más tareas de Ansible para hacer un "play". Se pueden combinar dos o más "plays" para crear un Ansible Playbook. Los Playbooks de Ansible son listas de tareas que se ejecutan automáticamente en los hosts. Los grupos de hosts forman su inventario de Ansible. (como hemos visto con el CLI)
+
+Cada módulo dentro de Ansible Playbook realiza una tarea específica. Cada módulo contiene metadatos que determinan cuándo y dónde se ejecuta una tarea, así como qué usuario la ejecuta, que outputs genera y la concatenación de estas tareas.
+
+Se va a ver más en detalle en la práctica de 4 de IaC, Ansible.
+
+## Ansible Tower / AWX
+
+Ansible Tower (Ansible AWX la versión opensource) es una interfaz de usuario web que permite interaccionar con Ansible para la gestión de inventarios.
+
+Permite a los administradores de sistemas y los equipos de DEVOPS la automatización de tareas contra servidores ofrenciendo los siguientes puntos adicionales:
+
+- Dashboard de usuario
+- Control acceso/permisos
+- Programación de tareas
+- Gestión inventarios
+- Consultar estado ejecuciones
+- API RESTful!!!!!!
