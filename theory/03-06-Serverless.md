@@ -28,7 +28,7 @@ Ambos dos se centran en el concepto de escalar a cero, es decir, de deshacernos 
 
 Este paradigma de desarrollo se conoce como **Funtions as a Service** (FaaS), dado que el objetivo principal es la programación de una funcionalidad (que en última instancia se entiende que se ejecutará en reacción a un evento dado). El esquema IaaS, PaaS y SaaS que vimos anteriormente queda ampliado del siguiente modo:
 
-<img src="https://miro.medium.com/max/1145/1*DYoadhgfpZCMRCMKNUpQ6A.png" alt="What are Cloud Computing Services [IaaS, CaaS, PaaS, FaaS, SaaS] | by  Nilesh Suryavanshi | Medium" style="zoom:67%;" />
+<img src=/images/XaaS.png" style="zoom:67%;" />
 
 De modo que en una arquitectura FaaS (serverless) lo único de lo que tenemos que hacernos cargo es de la gestión de los datos procesados o generados por la "función".
 
