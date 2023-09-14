@@ -46,6 +46,51 @@
 
 * Normalmente, todo proveedor cloud ofrece una interfaz gráfica muy accesible y agradable para el usuario, así como interfaces programáticas (APIs) que permiten la automatización de tareas repetitivas.
 
+### Equipos de trabajo
+
+DevOps, SRE (Site Reliability Engineering) y Platform Engineering son roles y prácticas relacionados en el mundo de la tecnología y la ingeniería de software, pero tienen enfoques y responsabilidades ligeramente diferentes. Aquí hay una breve descripción de cada uno y las diferencias clave:
+
+#### DEVOPS 
+
+#### SRE
+
+#### PLATFORM ENGINEER
+
+
+
+
+#### DevOps (Desarrollo y Operaciones):
+
+*Enfoque*: DevOps es una filosofía cultural y un conjunto de prácticas que busca la colaboración estrecha entre los equipos de desarrollo y operaciones para automatizar y acelerar la entrega de software.
+
+*Responsabilidades*: Los equipos de DevOps se centran en automatizar el ciclo de vida del software, desde la codificación y la integración hasta la implementación y la monitorización. También trabajan en la gestión de la configuración y la infraestructura como código (IaC).
+
+*Objetivo*: La principal meta de DevOps es reducir el tiempo entre la escritura de código y la puesta en producción, mejorando la calidad y la estabilidad de las aplicaciones.
+
+#### SRE (Site Reliability Engineering):
+
+*Enfoque*: SRE es una disciplina que se enfoca en garantizar la confiabilidad y la disponibilidad de los sistemas y servicios. Fue desarrollada por Google y se centra en la automatización y la gestión de la confiabilidad.
+
+*Responsabilidades*: Los SREs se concentran en la automatización de tareas operativas, el establecimiento de SLAs (Service Level Agreements) y la implementación de medidas proactivas para evitar interrupciones.
+
+*Objetivo*: El principal objetivo de SRE es garantizar que los sistemas sean altamente confiables y estén disponibles, reduciendo al mínimo el tiempo de inactividad no planificado.
+
+#### Platform Engineer (Ingeniero de Plataforma):
+
+*Enfoque*: Los Platform Engineers se centran en construir y mantener las plataformas tecnológicas que permiten a los equipos de desarrollo implementar y ejecutar sus aplicaciones de manera eficiente y segura.
+
+*Responsabilidades*: Esto implica la gestión de la infraestructura subyacente, la creación de herramientas y servicios para la automatización de implementaciones, la seguridad, la escalabilidad y la eficiencia operativa.
+
+*Objetivo*: Los Platform Engineers buscan proporcionar a los equipos de desarrollo una plataforma sólida y confiable en la que puedan implementar sus aplicaciones y servicios de manera efectiva y rápida.
+
+
+En resumen, mientras que DevOps se enfoca en la colaboración y la automatización en todo el ciclo de vida del software, SRE se centra en la confiabilidad y la disponibilidad de los sistemas, y los Platform Engineers se dedican a crear y mantener las plataformas tecnológicas que permiten que las aplicaciones se ejecuten de manera eficiente y segura. Estos roles a menudo trabajan juntos para garantizar el éxito de las operaciones de TI en una organización.
+
+
+  <img src="images/devs-teams-ways.png" style="zoom:75%;" />
+  
+### Características del Cloud
+
 * Las características diferenciadas de la nube son:
 
   * Escalabilidad y servicios bajo demanda (*Scalability and services on-demand*)
