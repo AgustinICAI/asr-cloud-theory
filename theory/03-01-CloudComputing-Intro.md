@@ -51,14 +51,6 @@
 
 DevOps, SRE (Site Reliability Engineering) y Platform Engineering son roles y prácticas relacionados en el mundo de la tecnología y la ingeniería de software, pero tienen enfoques y responsabilidades ligeramente diferentes. Aquí hay una breve descripción de cada uno y las diferencias clave:
 
-#### DEVOPS 
-
-#### SRE
-
-#### PLATFORM ENGINEER
-
-
-
 
 #### DevOps (Desarrollo y Operaciones):
 
@@ -88,7 +80,7 @@ DevOps, SRE (Site Reliability Engineering) y Platform Engineering son roles y pr
 En resumen, mientras que DevOps se enfoca en la colaboración y la automatización en todo el ciclo de vida del software, SRE se centra en la confiabilidad y la disponibilidad de los sistemas, y los Platform Engineers se dedican a crear y mantener las plataformas tecnológicas que permiten que las aplicaciones se ejecuten de manera eficiente y segura. Estos roles a menudo trabajan juntos para garantizar el éxito de las operaciones de TI en una organización.
 
 
-  <img src="images/devs-teams-ways.png" style="zoom:75%;" />
+  <img src="images/devs-teams-ways.jpg" style="zoom:75%;" />
   
 ### Características del Cloud
 
