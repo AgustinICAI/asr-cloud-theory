@@ -31,8 +31,9 @@
   * Proveedor Cloud (Cloud Provider):
     * La compañía/organización que provee la infraestructura tecnológica cloud
     * El proveedor cloud es responsable del mantenimiento de la infraestructura así como del cumplimiento con los acuerdos de disponibilidad (SLA, del inglés *Service-Level Agreement*) con el consumidor 
-  * Usuario/Desarrollador Cloud (Cloud Consumer/Developer): 
-    * Es la compañía/organización/persona que firma un acuerdo con el cloud provider para usar los servicios IT ofertados por el proveedor. 
+  * Equipo Arquitectura/Equipo Desarrollado Cloud (Cloud Consumer/Developer): 
+    * Es la compañía/organización/persona que firma un acuerdo con el cloud provider para usar los servicios IT ofertados por el proveedor.
+    * El departamento de arquitectura es el encargado de la realización de un primer proyecto llamado Landing Zone. Es el proyecto que sienta las bases para empezar a trabajar en la empresa con el nuevo proveedor cloud. Esto abarca: jerarquía de recursos, nomenclatura, redes, seguridad, monitorización y alertado, integrandose con los sistemas ya existentes.
     * Por lo general, el usuario cloud usará los servicios IT del proveedor cloud correspondiente a través de un conjunto de softwares intermediarios (del proveedor) generalmente conocido como *cloud service consumer* (CSC)
   * Operación/Administrador Cloud (Cloud Resource Administrator/Operator):
     * Es la compañía/organización/persona que se encarga de la administración de los servicios basados en la infraestructura cloud (incluyendo los propios servicios cloud ofertados por el proveedor). 
