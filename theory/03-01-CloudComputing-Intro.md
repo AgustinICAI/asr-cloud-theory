@@ -2,9 +2,6 @@
 
 ### 3.1 De la virtualización a la nube
 
-* En el capítulo anterior se han presentado las "tecnologías facilitadoras" que hacen posible proporcionar, y por tanto consumir, infraestructura tecnológica mediante código. 
-
-* Esta abstracción de la infraestructura tecnológica como código ha conllevado una revolución en la gestión y utilización efectiva del Hardware en los últimos 20 años.
 
 * A modo resumen, la virtualización es una capa de abstracción sobre Hardware físico que nos permite dividir dichos recursos físicos (e.g., procesador, memoria o almacenamiento) en múltiples unidades ***virtuales*** con las que se pueden operar como si fuera Hardware independiente. 
 
