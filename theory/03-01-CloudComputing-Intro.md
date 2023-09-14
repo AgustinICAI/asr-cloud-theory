@@ -31,16 +31,19 @@
   * Proveedor Cloud (Cloud Provider):
     * La compañía/organización que provee la infraestructura tecnológica cloud
     * El proveedor cloud es responsable del mantenimiento de la infraestructura así como del cumplimiento con los acuerdos de disponibilidad (SLA, del inglés *Service-Level Agreement*) con el consumidor 
-  * Equipo Arquitectura/Equipo Desarrollado Cloud (Cloud Consumer/Developer): 
+  * Equipo Arquitectura/Equipo Desarrollado Cloud (Cloud Architect / Dev Teams): 
     * Es la compañía/organización/persona que firma un acuerdo con el cloud provider para usar los servicios IT ofertados por el proveedor.
-    * El departamento de arquitectura es el encargado de la realización de un primer proyecto llamado Landing Zone. Es el proyecto que sienta las bases para empezar a trabajar en la empresa con el nuevo proveedor cloud. Esto abarca: jerarquía de recursos, nomenclatura, redes, seguridad, monitorización y alertado, integrandose con los sistemas ya existentes.
-    * Por lo general, el usuario cloud usará los servicios IT del proveedor cloud correspondiente a través de un conjunto de softwares intermediarios (del proveedor) generalmente conocido como *cloud service consumer* (CSC)
+    * El departamento de arquitectura es el encargado de la realización de un primer proyecto llamado Landing Zone. Es el proyecto que sienta las bases para empezar a trabajar en la empresa con el nuevo proveedor cloud. Esto abarca: jerarquía de recursos, nomenclatura, redes, seguridad, automatización, organización interna, monitorización y alertado, integrandose con los sistemas ya existentes.
+    * Por lo general, el desarrollador cloud usará los servicios IT del proveedor cloud correspondiente.
   * Operación/Administrador Cloud (Cloud Resource Administrator/Operator):
     * Es la compañía/organización/persona que se encarga de la administración de los servicios basados en la infraestructura cloud (incluyendo los propios servicios cloud ofertados por el proveedor). 
     * Puede ser o no parte de la entidad consumidora, ya que podría tratarse de una compañía externa al consumidor que se ha contratado con el cometido de administrar los servicios creados por el consumidor en la infraestructura cloud
-  * Auditor Cloud / Seguridad (Cloud Auditor): 
+  * Seguridad (Cloud Auditor/Security): 
     * Es una compañía/organización independiente (normalmente acreditada) que lleva a cabo revisiones regulares en relación a controles de seguridad, privacidad y continuidad de negocio.
-    * El objetivo principal de este rol es el de generar un informe exhaustivo e independiente sobre el entorno cloud que ayude a identificar vulnerabilidades y puntos débiles, que habrán de ser subsanados en un plazo determinado, para fortalecer la relación de confianza entre el consumidor y el proveedor cloud.    
+    * El objetivo principal de este rol es el de generar un informe exhaustivo e independiente sobre el entorno cloud que ayude a identificar vulnerabilidades y puntos débiles, que habrán de ser subsanados en un plazo determinado, para fortalecer la relación de confianza entre el consumidor y el proveedor cloud.
+  * Finanzas:
+    * Es el departamento encargado de controlar el gasto en cloud. Este departamento suele haber gente de los equipos de Operación Cloud que conocen los detalles de la facturación para ser capaces de justificar el gasto en las distintas partidas.
+    * La evolución es el concepto de FINOPS: es una práctica que se centra en la gestión eficiente de los costos en la nube y en entornos de tecnología de la información en general. Su objetivo principal es ayudar a las empresas a optimizar sus gastos en la nube.
 
 * Normalmente, todo proveedor cloud ofrece una interfaz gráfica muy accesible y agradable para el usuario, así como interfaces programáticas (APIs) que permiten la automatización de tareas repetitivas.
 
