@@ -27,11 +27,11 @@ A continuación se muestra una imagen donde se compara la gestión del usuario e
 
 <img src="images/iaas-paas-saas.png" alt="iaas-paas-saas" style="zoom:75%;" />
 
-#### Proveedores
+# Proveedores
 
 Los principales proveedores Cloud se pueden clasificar por el tipo de plataforma ofertada:
 
-* Principales proveedores IaaS:
+## Principales proveedores IaaS:
 
   * Amazon Web Services: AWS
   * Microsoft Azure
@@ -54,8 +54,8 @@ Los principales proveedores Cloud se pueden clasificar por el tipo de plataforma
   | **CloudSigma**            | European based, designed for cloud server hosting            | User interface isn’t considered very friendly.              | $14/month             |
   | **VMware vCloud Air**     | Good cloud and VM management and disaster recovery support   | Some limited features, interface needs work.                | $0.034 /GB/hr         |
 
-* Principales proveedores PaaS
-## Bases de datos
+## Principales proveedores PaaS
+### Bases de datos
 
 La elección de un servicio gestionado de bases de datos en la nube depende de varios factores, incluyendo el tipo de base de datos que necesitas, tus requisitos de rendimiento, escalabilidad, presupuesto y preferencias técnicas. 
 
@@ -88,7 +88,7 @@ Desventajas: Puede ser costoso a medida que se escalan los recursos.
 Ventajas: Automatización, alto rendimiento, seguridad avanzada, capacidad de recuperación.
 Desventajas: Puede ser costoso.
 
-## Plataformas Kubernetes
+### Plataformas Kubernetes
 
 La gestión de clústeres de Kubernetes en la nube es esencial para simplificar la administración de contenedores y aprovechar al máximo esta tecnología. La elección de una nube u otra, se debería hacer en base a coste, madurez y acuerdo con el proveedor cloud:
 
@@ -97,7 +97,7 @@ La gestión de clústeres de Kubernetes en la nube es esencial para simplificar 
 Existen otros como Microsoft Azure Kubernetes Service (AKS), IBM Cloud Kubernetes Service (IKS), Alibaba, Rancher, Oracle que también ofrecen servicios de kubernetes gestionados.
   
 
-## Plataformas de desarrollo (en desuso)
+### Plataformas de desarrollo (en desuso)
 
   * AWS - El más usado: Elastic Beanstalk (AWS EB)
     * Uno de los PaaS más extendidos en la industria, cuyo propósito es el despliegue sencillo y autoescalable de web apps (en cualquiera de los lenguajes principales para ello)
@@ -108,7 +108,7 @@ Existen otros como Microsoft Azure Kubernetes Service (AKS), IBM Cloud Kubernete
   * Microsoft Azure - El más usado: Azure App Service
     * Azure ofrece PaaS similares a los de sus competidores, AWS y GCP, desde servicios de almacenamiento, a despliegue de web apps (Azure App Service)
 
-* Principales proveedores cloud de SaaS:
+## Principales proveedores cloud de SaaS:
 
   * Salesforce
   * Microsoft
