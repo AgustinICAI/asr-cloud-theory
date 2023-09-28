@@ -64,12 +64,12 @@ De esta manera podemos ejecutar cantidad de cosas:
 
 #### Reiniciar el servicio httpd en los servidores de  preproduccion
 ```shell
-ansible preproduccion -m service -a "name=httpd state=restarted"
+ansible all -m service -a "name=apache2 state=restarted" --become
 ```
 
 #### Copiar el fichero 'hola.txt' a los servidores de 'preproduccion' y 'produccion'
 ```shell
-ansible preproduccion:produccion -m copy -a "src=~/prueba/hola.txt dest=/opt/hola.txt"
+ansible all -m copy -a "src=~/hola.txt dest=/tmp/hola.txt"
 ```
 
 #### Ejecutar '/bin/echo hello' en el servidor '192.168.15.1'. Si no ponemos módulo interpreta que el módulo es 'shell'
