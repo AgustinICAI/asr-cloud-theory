@@ -21,15 +21,17 @@ Una plataforma cloud, también conocido como *modelo de despliegue cloud* (**clo
   * Las actualizaciones de software, las correcciones de fallos y otros mantenimientos generales del software están a cargo del usuario, y se conectan a las aplicaciones de la nube a través de un panel o una API
   * El SaaS también elimina la necesidad de instalar localmente una aplicación, lo cual da lugar a mejores métodos de acceso grupal o en equipo al sistema de software
 
+Aunque estas son los modelos frecuentes, existen otros que veremos más adelante con **CaaS** y **FaaS**
+
 A continuación se muestra una imagen donde se compara la gestión del usuario en los diferentes modelos de plataforma cloud: 
 
 <img src="images/iaas-paas-saas.png" alt="iaas-paas-saas" style="zoom:75%;" />
 
-#### Proveedores
+# Proveedores
 
 Los principales proveedores Cloud se pueden clasificar por el tipo de plataforma ofertada:
 
-* Principales proveedores IaaS:
+## Principales proveedores IaaS:
 
   * Amazon Web Services: AWS
   * Microsoft Azure
@@ -52,7 +54,50 @@ Los principales proveedores Cloud se pueden clasificar por el tipo de plataforma
   | **CloudSigma**            | European based, designed for cloud server hosting            | User interface isn’t considered very friendly.              | $14/month             |
   | **VMware vCloud Air**     | Good cloud and VM management and disaster recovery support   | Some limited features, interface needs work.                | $0.034 /GB/hr         |
 
-* Principales proveedores PaaS
+## Principales proveedores PaaS
+### Bases de datos
+
+La elección de un servicio gestionado de bases de datos en la nube depende de varios factores, incluyendo el tipo de base de datos que necesitas, tus requisitos de rendimiento, escalabilidad, presupuesto y preferencias técnicas. 
+
+* Amazon RDS (Relational Database Service):
+- Tipo de base de datos: MySQL, PostgreSQL, Oracle, SQL Server, etc.
+- Ventajas: Escalabilidad automática, copias de seguridad automatizadas, múltiples opciones de motor de base de datos.
+- Desventajas: Puede ser costoso a medida que se escalan los recursos comparado con otros rivales.
+
+* Google Cloud SQL:
+- Tipo de base de datos: MySQL, PostgreSQL, SQL Server.
+- Ventajas: Integración con otros servicios de Google Cloud, escalabilidad, réplicas de lectura, copias de seguridad automáticas.
+- Desventajas: Puede ser costoso, menos opciones de motor de base de datos en comparación con AWS.
+
+* Microsoft Azure SQL Database:
+Tipo de base de datos: SQL Server principalmente, aunque también da bases de datos básicas.
+Ventajas: Integración con servicios de Azure, escalabilidad, seguridad avanzada, copias de seguridad automáticas.
+Desventajas: Enfoque en SQL Server, puede ser costoso.
+
+* Google Firebase Realtime Database / Firestore:
+Tipo de base de datos: NoSQL (Firestore), JSON (Realtime Database).
+Ventajas: Escalabilidad en tiempo real, sincronización en tiempo real, fácil integración con aplicaciones móviles y web.
+Desventajas: Limitaciones en consultas complejas.
+
+* MongoDB Atlas:
+Tipo de base de datos: MongoDB (NoSQL).
+Ventajas: Gestión fácil de MongoDB, escalabilidad global, seguridad avanzada, copias de seguridad automáticas.
+Desventajas: Puede ser costoso a medida que se escalan los recursos.
+
+* Tipo de base de datos: Oracle. (la única que ofrece este servicio sin limitaciones)
+Ventajas: Automatización, alto rendimiento, seguridad avanzada, capacidad de recuperación.
+Desventajas: Puede ser costoso.
+
+### Plataformas Kubernetes
+
+La gestión de clústeres de Kubernetes en la nube es esencial para simplificar la administración de contenedores y aprovechar al máximo esta tecnología. La elección de una nube u otra, se debería hacer en base a coste, madurez y acuerdo con el proveedor cloud:
+
+* Amazon Elastic Kubernetes Service (EKS) y Google Kubernetes Engine (GKE): son los líderes y los principales contribuidores al proyecto kubernetes.
+
+Existen otros como Microsoft Azure Kubernetes Service (AKS), IBM Cloud Kubernetes Service (IKS), Alibaba, Rancher, Oracle que también ofrecen servicios de kubernetes gestionados.
+  
+
+### Plataformas de desarrollo (en desuso)
 
   * AWS - El más usado: Elastic Beanstalk (AWS EB)
     * Uno de los PaaS más extendidos en la industria, cuyo propósito es el despliegue sencillo y autoescalable de web apps (en cualquiera de los lenguajes principales para ello)
@@ -63,7 +108,7 @@ Los principales proveedores Cloud se pueden clasificar por el tipo de plataforma
   * Microsoft Azure - El más usado: Azure App Service
     * Azure ofrece PaaS similares a los de sus competidores, AWS y GCP, desde servicios de almacenamiento, a despliegue de web apps (Azure App Service)
 
-* Principales proveedores cloud de SaaS:
+## Principales proveedores cloud de SaaS:
 
   * Salesforce
   * Microsoft

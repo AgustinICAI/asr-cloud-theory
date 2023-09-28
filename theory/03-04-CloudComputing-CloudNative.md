@@ -24,7 +24,7 @@ Este paradigma de desarrollo suele ir acompañado del uso de las siguientes tecn
 ### Ventajas DEVOPS
 - Adecuado para time-to-market ajustado. 
 - En caso de startups o equipos específicos en grandes empresas, DEVOPS significa que quien desarrolla opera.
-- Para grandes empresas que se suele buscar perfiles DEVOPS específicos que trabajen conjuntamente con desarrollares y operaciones evitando que múltiples equipos se encarguen de las mismas tareas.
+- Para grandes empresas que se suele buscar perfiles DEVOPS específicos que trabajen conjuntamente con desarrollares y operaciones evitando que múltiples equipos se encarguen de las mismas tareas. Esta forma de trabajar es lo que ha evolucionado a "Platform engineering".
 - Mayor número de subidas e iteraciones.
 - Software a la larga tiende a tener buena calidad y seguro, ya que se automatizan test, test de seguridad, pruebas de rendimiento.
 - Se define unos estandares de como se construye y despliega.
