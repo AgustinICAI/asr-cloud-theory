@@ -3,13 +3,13 @@
 ### 3.1 De la virtualización a la nube
 
 
-* A modo resumen, la virtualización es una capa de abstracción sobre Hardware físico que nos permite dividir dichos recursos físicos (e.g., procesador, memoria o almacenamiento) en múltiples unidades ***virtuales*** con las que se pueden operar como si fuera Hardware independiente. 
+* La virtualización es una capa de abstracción sobre Hardware físico que nos permite dividir dichos recursos físicos (e.g., procesador, memoria o almacenamiento) en múltiples unidades ***virtuales*** con las que se pueden operar como si fuera Hardware independiente. 
 
 * Por ejemplo, esto nos permite generar en un solo ordenador varias ***máquinas virtuales*** (VMs del inglés *virtual machines*) que se comportan como ordenadores completamente independientes con una realidad física.
 
   <img src="images/virtualisation.png" alt="Virtualized Server Installation" style="zoom:65%;" />
 
-* Hemos visto que los tipos de virtualización más populares son:
+* Los tipos de virtualización más populares son:
 
   * Virtualización de procesamiento (Server Virtualisation)
   * Virtualización de almacenamiento (Storage Virtualisation)
@@ -47,7 +47,7 @@
 
 * Normalmente, todo proveedor cloud ofrece una interfaz gráfica muy accesible y agradable para el usuario, así como interfaces programáticas (APIs) que permiten la automatización de tareas repetitivas.
 
-### Equipos de trabajo
+### 3.2 Equipos de trabajo
 
 DevOps, SRE (Site Reliability Engineering) y Platform Engineering son roles y prácticas relacionados en el mundo de la tecnología y la ingeniería de software, pero tienen enfoques y responsabilidades ligeramente diferentes. Aquí hay una breve descripción de cada uno y las diferencias clave:
 
