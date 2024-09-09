@@ -1,6 +1,6 @@
 
+![image](https://github.com/user-attachments/assets/8a0a48c2-3a13-4821-9365-ae571a32f88f)
 
-![image](https://github.com/user-attachments/assets/9604773c-6b85-4c66-a955-be002107e7b7)
 
 
 | Característica                   | Máquina Física                      | Virtualización (Máquina Virtual)          | Contenedores (Docker)         | Kubernetes                                 |
