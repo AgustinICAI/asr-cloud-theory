@@ -26,6 +26,8 @@
 
   <img src="images/layers-cloud.png" alt="Screenshot 2021-10-02 at 13.26.02" style="zoom:75%;" />
 
+
+
 * Como se puede intuir del punto anterior, en el mundo cloud se pueden identificar ciertos "roles" característicos que son universales, como son por ejemplo:
 
   * Proveedor Cloud (Cloud Provider):
@@ -47,7 +49,7 @@
 
 * Normalmente, todo proveedor cloud ofrece una interfaz gráfica muy accesible y agradable para el usuario, así como interfaces programáticas (APIs) que permiten la automatización de tareas repetitivas.
 
-### 3.2 Equipos de trabajo
+### 3.3 Prácticas ágiles de trabajar en el cloud
 
 DevOps, SRE (Site Reliability Engineering) y Platform Engineering son roles y prácticas relacionados en el mundo de la tecnología y la ingeniería de software, pero tienen enfoques y responsabilidades ligeramente diferentes. Aquí hay una breve descripción de cada uno y las diferencias clave:
 
@@ -81,17 +83,3 @@ En resumen, mientras que DevOps se enfoca en la colaboración y la automatizaci�
 
   <img src="images/devs-teams-ways.jpg" style="zoom:75%;" />
   
-### Características del Cloud público
-
-* Las características diferenciadas de la nube son:
-
-  * Escalabilidad y servicios bajo demanda (*Scalability and services on-demand*)
-    * Una de las características principales y más definitorias de la nube es la capacidad ofrecida al consumidor cloud de disponer de recursos y modificar sus especificaciones (escalarlos) bajo demanda. El escalado puede ocurrir tanto en datacenters de una misma zona, así como en datacenters de distintas zonas y regiones
-  * Interfaz centrada en el usuario (*User-centric interface*)
-    * El uso de la nube es independiente de la localización del consumidor, y se puede acceder fácilmente a través de alguna red (pública o privada) mediante interfaces estándares, como son los servicios web, o exploradores de Internet
-  * Elasticidad (*Elasticity*)
-    * Capacidad de escalar automáticamente y de manera transparente los servicios cloud según se requiera, o acorde a ciertos parámetros establecidos bien por el consumidor o bien por el proveedor  
-  * Calidad de los servicios garantizada: Resiliencia (*Guaranteed Quality of Services [QoS]: Resiliency*)
-    * La resiliencia se basa en la distribución redundante de los servicios en multiples localizaciones físicas, lo cual permite garantizar los recursos cloud ofertados gracias a esta forma de respaldo automático
-  * Cobro por uso (*Pay-as-you-go* [*PAYG*])
-    * La nube no requiere una inversión en recursos de manera anticipada. Todo lo contrario, la nube permite a los consumidores pagar solo por lo que están usando, tanto en procesamiento como en almacenamiento. Esto es posible gracias a que el proveedor cloud tiene un sistema de monitorización/control del uso de los recursos cloud por parte de sus clientes, el cual es totalmente transparente al consumidor, lo cual incrementa la relación de confianza entre ambos.
