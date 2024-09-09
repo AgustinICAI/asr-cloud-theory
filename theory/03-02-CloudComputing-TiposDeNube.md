@@ -1,6 +1,22 @@
 # 3. Cloud Computing
 
-### 3.2 Tipos de nubes
+### 3.2.1 Caracteristicas de la nube
+
+* Las características diferenciadas de la nube son:
+
+  * Escalabilidad y servicios bajo demanda (*Scalability and services on-demand*)
+    * Una de las características principales y más definitorias de la nube es la capacidad ofrecida al consumidor cloud de disponer de recursos y modificar sus especificaciones (escalarlos) bajo demanda. El escalado puede ocurrir tanto en datacenters de una misma zona, así como en datacenters de distintas zonas y regiones
+  * Interfaz centrada en el usuario (*User-centric interface*)
+    * El uso de la nube es independiente de la localización del consumidor, y se puede acceder fácilmente a través de alguna red (pública o privada) mediante interfaces estándares, como son los servicios web, o exploradores de Internet
+  * Elasticidad (*Elasticity*)
+    * Capacidad de escalar automáticamente y de manera transparente los servicios cloud según se requiera, o acorde a ciertos parámetros establecidos bien por el consumidor o bien por el proveedor  
+  * Calidad de los servicios garantizada: Resiliencia (*Guaranteed Quality of Services [QoS]: Resiliency*)
+    * La resiliencia se basa en la distribución redundante de los servicios en multiples localizaciones físicas, lo cual permite garantizar los recursos cloud ofertados gracias a esta forma de respaldo automático
+  * Cobro por uso (*Pay-as-you-go* [*PAYG*])
+    * La nube no requiere una inversión en recursos de manera anticipada. Todo lo contrario, la nube permite a los consumidores pagar solo por lo que están usando, tanto en procesamiento como en almacenamiento. Esto es posible gracias a que el proveedor cloud tiene un sistema de monitorización/control del uso de los recursos cloud por parte de sus clientes, el cual es totalmente transparente al consumidor, lo cual incrementa la relación de confianza entre ambos.
+
+
+### 3.2.2 Tipos de nubes
 
 Existen tres tipos principales de "nube" (cloud computing):
 
