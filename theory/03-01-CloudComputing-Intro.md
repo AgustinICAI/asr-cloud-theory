@@ -81,7 +81,7 @@ En resumen, mientras que DevOps se enfoca en la colaboración y la automatizaci�
 
   <img src="images/devs-teams-ways.jpg" style="zoom:75%;" />
   
-### Características del Cloud
+### Características del Cloud público
 
 * Las características diferenciadas de la nube son:
 
