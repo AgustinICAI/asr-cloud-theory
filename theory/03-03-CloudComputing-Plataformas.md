@@ -37,9 +37,7 @@ Los principales proveedores Cloud se pueden clasificar por el tipo de plataforma
   * Microsoft Azure
   * Google Cloud Platform: GCP
   * IBM Cloud
-  * Rackspace
   * Oracle Cloud
-  * CenturyLink Cloud
 
   | Provider                  | Biggest positive                                             | Biggest negative                                            | Lowest starting price |
   | :------------------------ | :----------------------------------------------------------- | :---------------------------------------------------------- | :-------------------- |
@@ -47,12 +45,7 @@ Los principales proveedores Cloud se pueden clasificar por el tipo de plataforma
   | **Microsoft Azure**       | Best support for legacy Windows but also for Linux migrations | Need more platform expertise than other providers           | $0.005/hour           |
   | **Google Compute Engine** | Emphasis on performance, availability and cost               | IaaS is lacking compared to others, no on-premises support. | $0.0475/hour          |
   | **IBM Cloud**             | Massive library of IBM services; comprehensive on-premises support | Limited regions, pricing, and SLAs.                         | Free                  |
-  | **Rackspace**             | Leaders in managed cloud services, flexible pricing          | Pricing models can be confusing and costs can add up fast.  | $0.032/hour           |
   | **Oracle Cloud**          | Your best bet to move your on-prem Oracle environment to the cloud | Oracle doesn’t have the same scale as bigger players        | $0.0638/hour          |
-  | **Verizon Enterprise**    | Good for mid-sized businesses, emphasis on connectivity, managed hosting and security | Limited storage, service is only for Verizon customers      | $48/month             |
-  | **CenturyLink Cloud**     | Good connectivity to the cloud, ideal for SMBs               | Has trouble scaling to large enterprises or high traffic.   | $18.24/month          |
-  | **CloudSigma**            | European based, designed for cloud server hosting            | User interface isn’t considered very friendly.              | $14/month             |
-  | **VMware vCloud Air**     | Good cloud and VM management and disaster recovery support   | Some limited features, interface needs work.                | $0.034 /GB/hr         |
 
 ## Principales proveedores PaaS
 ### Bases de datos
@@ -103,13 +96,13 @@ Existen otros como Microsoft Azure Kubernetes Service (AKS), IBM Cloud Kubernete
     * Uno de los PaaS más extendidos en la industria, cuyo propósito es el despliegue sencillo y autoescalable de web apps (en cualquiera de los lenguajes principales para ello)
   * Google - El más usado: Google App Engine (GAE)
     * Similar Elastic Beanstalk de AWS, Google App Engine tiene el propósito de hacer el despliegue de aplicaciones web lo más sencillo posible para el desarrollador. GAE viene con un beneficio añadido y es la posibilidad de añadir capas de seguridad a modo add-ons, algo que conllevaría una gestión muy costosa en cuanto a tiempo se refiere
-  * Salesforce
-    * EL propósito de Salesforce aPaaS es nuevamente el de proporcionar al usuario cloud la posibilidad de desarrollar applicationes integradles en Salesforce de una forma muy sencilla, sin preocuparse de todos los detalles de la gestión de la infraestructura virtualizada
   * Microsoft Azure - El más usado: Azure App Service
     * Azure ofrece PaaS similares a los de sus competidores, AWS y GCP, desde servicios de almacenamiento, a despliegue de web apps (Azure App Service)
 
 ## Principales proveedores cloud de SaaS:
 
-  * Salesforce
-  * Microsoft
-  * Google
+  * Salesforce: es una plataforma líder de CRM (Customer Relationship management). Ayuda a las empresas a gestionar interacciones con los clientes, automatizar procesos de ventas, marketing y atención al cliente. También permite la personalización y programación de aplicaciones a través de su plataforma y su ecosistema/lenguaje programación AppExchange.
+    
+  * Microsoft: sus principales productos son Microsoft 365 y Azure AD (nuevo Microsoft Entra Id) 
+    
+  * Google: Google Workspace, Google Analytics y Google Ads
