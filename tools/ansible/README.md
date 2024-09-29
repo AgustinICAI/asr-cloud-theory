@@ -88,7 +88,7 @@ Cada módulo dentro de Ansible Playbook realiza una tarea específica. Cada mód
 
 Se va a ver más en detalle en la práctica de 4 de IaC, Ansible.
 
-## Ansible Tower / AWX
+## Red Hat Ansible Automation Platform / AWX
 
 Ansible Tower (Ansible AWX la versión opensource) es una interfaz de usuario web que permite interaccionar con Ansible para la gestión de inventarios.
 
