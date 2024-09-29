@@ -8,7 +8,7 @@ Ansible es una plataforma para automatización IT para hacer que el proceso de s
 ### Instalación
 
 ```shell
-python3 -m pip install --user ansible
+sudo apt install ansible
 ```
 
 ### Inventario y primeras automatizaciones
