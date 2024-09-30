@@ -53,7 +53,7 @@ Esto ayuda de antemano a desacoplar las diferentes unidades de un proyecto, lo q
 | Facilita las actualizaciones                                 | Complejidad del diseño                                |
 | Mejora la estabilidad                                        | ¿Qué es un microservicio? Tamaño, funcionalidad, etc. |
 | Desacoplado de recursos físicos                              | Estandarización de interfaces                         |
-| Multi-idioma/plataforma/…                                    |                                                       |
+| Multi-plataforma                                             |                                                       |
 | Fácil de construir/probar/desplegar                          |                                                       |
 
  A continuación se muestra una figura en la que se comparan de manera esquemática las arquitecturas tradicionales *versus* las arquitecturas orientadas a microservicios.
