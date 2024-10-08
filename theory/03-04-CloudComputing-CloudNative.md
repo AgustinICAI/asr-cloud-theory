@@ -61,7 +61,7 @@ Esto ayuda de antemano a desacoplar las diferentes unidades de un proyecto, lo q
 ![soa-vs-microservices](images/soa-vs-microservices.png)
 
 
-## Los 12 factores
+## Los 12 factores (NO OS LOS APRENDAIS, SÓLO SABER QUE EXISTIERON)
 
 “Twelve-factor app” es una metodología para el desarrollo de aplicaciones nativas en la nube cuyas características esenciales son: 
 
