@@ -52,32 +52,32 @@ Los principales proveedores Cloud se pueden clasificar por el tipo de plataforma
 
 La elección de un servicio gestionado de bases de datos en la nube depende de varios factores, incluyendo el tipo de base de datos que necesitas, tus requisitos de rendimiento, escalabilidad, presupuesto y preferencias técnicas. 
 
-* Amazon RDS (Relational Database Service):
+#### Amazon RDS (Relational Database Service)
 - Tipo de base de datos: MySQL, PostgreSQL, Oracle, SQL Server, etc.
 - Ventajas: Escalabilidad automática, copias de seguridad automatizadas, múltiples opciones de motor de base de datos.
 - Desventajas: Puede ser costoso a medida que se escalan los recursos comparado con otros rivales.
 
-* Google Cloud SQL:
+#### Google Cloud SQL
 - Tipo de base de datos: MySQL, PostgreSQL, SQL Server.
 - Ventajas: Integración con otros servicios de Google Cloud, escalabilidad, réplicas de lectura, copias de seguridad automáticas.
 - Desventajas: Puede ser costoso, menos opciones de motor de base de datos en comparación con AWS.
 
-* Microsoft Azure SQL Database:
+#### Microsoft Azure SQL Database
 Tipo de base de datos: SQL Server principalmente, aunque también da bases de datos básicas.
 Ventajas: Integración con servicios de Azure, escalabilidad, seguridad avanzada, copias de seguridad automáticas.
 Desventajas: Enfoque en SQL Server, puede ser costoso.
 
-* Google Firebase Realtime Database / Firestore:
+#### Google Firebase Realtime Database / Firestore:
 Tipo de base de datos: NoSQL (Firestore), JSON (Realtime Database).
 Ventajas: Escalabilidad en tiempo real, sincronización en tiempo real, fácil integración con aplicaciones móviles y web.
 Desventajas: Limitaciones en consultas complejas.
 
-* MongoDB Atlas:
+#### MongoDB Atlas:
 Tipo de base de datos: MongoDB (NoSQL).
 Ventajas: Gestión fácil de MongoDB, escalabilidad global, seguridad avanzada, copias de seguridad automáticas.
 Desventajas: Puede ser costoso a medida que se escalan los recursos.
 
-* Tipo de base de datos: Oracle. (la única que ofrece este servicio sin limitaciones)
+#### Tipo de base de datos: Oracle. (la única que ofrece este servicio sin limitaciones)
 Ventajas: Automatización, alto rendimiento, seguridad avanzada, capacidad de recuperación.
 Desventajas: Puede ser costoso.
 
