@@ -39,13 +39,14 @@ Los principales proveedores Cloud se pueden clasificar por el tipo de plataforma
   * IBM Cloud
   * Oracle Cloud
 
-  | Provider                  | Biggest positive                                             | Biggest negative                                            | Lowest starting price |
-  | :------------------------ | :----------------------------------------------------------- | :---------------------------------------------------------- | :-------------------- |
-  | **Amazon Web Services**   | Most comprehensive collection of services                    | Its popularity could leave you feeling like a number        | $0.0058/hour          |
-  | **Microsoft Azure**       | Best support for legacy Windows but also for Linux migrations | Need more platform expertise than other providers           | $0.005/hour           |
-  | **Google Compute Engine** | Emphasis on performance, availability and cost               | IaaS is lacking compared to others, no on-premises support. | $0.0475/hour          |
-  | **IBM Cloud**             | Massive library of IBM services; comprehensive on-premises support | Limited regions, pricing, and SLAs.                         | Free                  |
-  | **Oracle Cloud**          | Your best bet to move your on-prem Oracle environment to the cloud | Oracle doesn’t have the same scale as bigger players        | $0.0638/hour          |
+| **Proveedor** | **Aspecto más destacado (positivo)** | **Limitación principal (negativo)** | **Coste medio estimado por núcleo virtual (x86, On-Demand)** |
+|----------------|--------------------------------------|--------------------------------------|------------------------------------------|
+| **Amazon Web Services (AWS)** | Se caracteriza por ofrecer el catálogo más amplio y maduro de servicios en la nube, abarcando desde infraestructura hasta herramientas avanzadas de inteligencia artificial y análisis de datos. | Su elevada adopción global puede generar una percepción de atención poco personalizada, dado el volumen masivo de clientes que gestiona. | Aproximadamente **0,05 USD por vCPU-hora** para instancias de propósito general basadas en arquitectura x86. |
+| **Microsoft Azure** | Presenta una integración sobresaliente con entornos empresariales basados en Windows y Active Directory, al tiempo que ofrece soporte sólido para migraciones hacia Linux y otros sistemas abiertos. | Requiere un nivel de especialización técnica relativamente superior respecto a otros proveedores, especialmente en la configuración y gestión de servicios avanzados. | Entre **0,06 y 0,10 USD por vCPU-hora**, dependiendo del tipo de instancia y la región. |
+| **Google Compute Engine (GCP)** | Destaca por su énfasis en el rendimiento, la eficiencia del coste y la alta disponibilidad, beneficiándose de la infraestructura global de Google y su experiencia en escalabilidad. | Su oferta de infraestructura como servicio (IaaS) es menos extensa que la de AWS, y carece de soporte integral para entornos híbridos o locales. | En torno a **0,045 USD por vCPU-hora** para instancias estándar x86 en regiones europeas. |
+| **IBM Cloud** | Ofrece una amplia gama de servicios empresariales y un fuerte enfoque en soluciones híbridas y locales, lo que lo convierte en una opción atractiva para organizaciones con infraestructura preexistente. | Su red de centros de datos es más limitada, y sus precios y acuerdos de nivel de servicio (SLA) resultan menos competitivos frente a los principales líderes del mercado. | Estimado entre **0,065 y 0,085 USD por vCPU-hora** para servidores virtuales x86. |
+| **Oracle Cloud** | Representa una opción óptima para organizaciones que utilizan bases de datos y aplicaciones Oracle, proporcionando una integración nativa y precios competitivos en el segmento de computación. | A pesar de sus avances, su ecosistema y su escala global siguen siendo menores que los de AWS, Azure o Google Cloud. | Aproximadamente entre **0,035 y 0,050 USD por vCPU-hora**, lo que lo sitúa entre los más económicos en infraestructura x86. |
+
 
 ## Principales proveedores PaaS
 ### Bases de datos
