@@ -1,6 +1,4 @@
-# 3. Cloud Computing
-
-### 3.7 Estimación de costes Cloud. Migración.
+# 3.7 Estimación de costes Cloud. Migración
 
 El término ***migración cloud*** (o *cloud migration*) se refiere al proceso completo mediante el cual una empresa mueve algunas de (o todas) las capacidades de su Data Center (DC) propio a la nube. Normalmente este término se suele usar cuando se refieren a una nube pública, no privada, aunque sería aplicable a cualquier tipo de nube por supuesto.  Pero, ¿cuáles son los principales beneficios de la nube (si es que aún no nos han quedado del todo claros)?
 
@@ -13,7 +11,7 @@ Como hemos comentado anteriormente, algunos de los principales beneficios de usa
 
 La mayoría de estas ideas están reflejadas en un manifiesto que se ha convertido en un estándar, **[las 10 leyes de cloud-economics](http://www.virtualdensity.com/resources/the-10-laws-of-cloudonomics/)**. 
 
-#### *Cloud economics*: Las 10 leyes
+## *Cloud economics*: Las 10 leyes
 
 Sorprendentemente, las *10 leyes* no son algo reciente, sino que fueron [*enunciadas* en 2008 por Joe Weinman](http://www.joeweinman.com/Resources/Joe_Weinman%2010%20Laws%20of%20Fogonomics.pdf), por entonces "Strategic Solutions Sales VP" en AT&T Global Business Services. 
 
@@ -30,7 +28,7 @@ Sorprendentemente, las *10 leyes* no son algo reciente, sino que fueron [*enunci
 
 
 
-#### Retos de una migración cloud
+## Retos de una migración cloud
 
 A pesar de todas sus ventajas mencionadas tanto a presente como a futuro, cualquier migración cloud conlleva unos riesgos, que normalmente escalan con el *legacy tecnológico* de la empresa (lo cual suele escalar con la edad de la misma). Las migraciones cloud pueden llegar a ser maniobras muy complejas y arriesgadas por diversas razones. Los principales retos reportados en migraciones de este tipo son:
 
@@ -50,7 +48,7 @@ El vendor lock-in es un problema común para los que adoptan la tecnología clou
 
 Uno de los principales obstáculos para la migración a la nube es la *seguridad* de los datos y el *cumplimiento* con las legislaciones activas (*compliance*). Los servicios cloud utilizan un modelo de responsabilidad compartida, en el que asumen la responsabilidad de proteger la infraestructura y el cliente es responsable de proteger los datos y las cargas de trabajo. Por lo tanto, si bien el proveedor de la nube puede proporcionar medidas de seguridad sólidas, es responsabilidad de su organización configurarlas correctamente y asegurarse de que todos los servicios y aplicaciones tengan los controles de seguridad adecuados. El proceso de migración en sí mismo presenta riesgos de seguridad. La transferencia de grandes volúmenes de datos, que pueden ser confidenciales, y la configuración de controles de acceso para aplicaciones en diferentes entornos, crea una exposición significativa.
 
-#### Estrategias de migración
+## Estrategias de migración
 
 Una migración cloud debe considerar qué estrategia responde mejor a las necesidades de la organización. A continuación podemos ver algunas de las más frecuentes (las 5Rs): 
 
@@ -60,7 +58,7 @@ Una migración cloud debe considerar qué estrategia responde mejor a las necesi
 * **Reconstruir**: La reconstrucción lleva el enfoque Revise aún más lejos al descartar el código base existente y reemplazarlo por uno nuevo. Este proceso lleva mucho tiempo y solo se considera cuando las empresas deciden que sus soluciones existentes no satisfacen las necesidades comerciales actuales. 
 * **Reemplazar**: Reemplazar es otro enfoque de reinvención como en el Reconstruir. La diferencia aquí es que la empresa no vuelve a desarrollar su propia aplicación nativa desde cero. Esto implica migrar a una aplicación prediseñada de terceros proporcionada por el proveedor. Lo único que migra de su aplicación existente son los datos, mientras que todo lo demás sobre el sistema es nuevo.
 
-#### Estimación de costes
+## Estimación de costes
 
 Tenidas en cuenta todas las consideraciones que hemos estado comentando hasta ahora, sin duda alguna un componente importante de una migración cloud es la estimación de costes en los que incurriremos en el caso de decidirnos por un recurso u otro. Para ello, cada nube pone a nuestro servicio un estimador de los costes asociados, por lo general considerando las siguientes características (y algunas otras más específicas):
 

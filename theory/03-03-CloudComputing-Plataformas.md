@@ -1,8 +1,6 @@
-# 3. Cloud Computing
+# 3.3 Plataformas cloud
 
-### 3.3 Plataformas cloud
-
-#### Plataformas
+## Plataformas
 
 Una plataforma cloud, también conocido como *modelo de despliegue cloud* (**cloud delivery model**), representa una combinación especifica de recursos IT que oferta el proveedor cloud. Los modelos más comunes, y que por tanto se han establecido como estándares en la industria, son los siguientes:
 
@@ -23,15 +21,25 @@ Una plataforma cloud, también conocido como *modelo de despliegue cloud* (**clo
 
 Aunque estas son los modelos frecuentes, existen otros que veremos más adelante con **CaaS** y **FaaS**
 
-A continuación se muestra una imagen donde se compara la gestión del usuario en los diferentes modelos de plataforma cloud: 
+A continuación se muestra una tabla donde se compara la gestión del usuario en los diferentes modelos de plataforma cloud (en negro lo que gestiona el cliente, en azul lo que gestiona el proveedor):
 
-<img src="images/iaas-paas-saas.png" alt="iaas-paas-saas" style="zoom:75%;" />
+| | On-Premises | IaaS | PaaS | SaaS |
+|---|---|---|---|---|
+| Applications | Cliente | Cliente | Cliente | Proveedor |
+| Data | Cliente | Cliente | Cliente | Proveedor |
+| Runtime | Cliente | Cliente | Proveedor | Proveedor |
+| Middleware | Cliente | Cliente | Proveedor | Proveedor |
+| O/S | Cliente | Cliente | Proveedor | Proveedor |
+| Virtualization | Cliente | Proveedor | Proveedor | Proveedor |
+| Servers | Cliente | Proveedor | Proveedor | Proveedor |
+| Storage | Cliente | Proveedor | Proveedor | Proveedor |
+| Networking | Cliente | Proveedor | Proveedor | Proveedor |
 
-# Proveedores
+## Proveedores cloud
 
 Los principales proveedores Cloud se pueden clasificar por el tipo de plataforma ofertada:
 
-## Principales proveedores IaaS:
+### Principales proveedores IaaS
 
   * Amazon Web Services: AWS
   * Microsoft Azure
@@ -48,8 +56,8 @@ Los principales proveedores Cloud se pueden clasificar por el tipo de plataforma
 | **Oracle Cloud** | Representa una opción óptima para organizaciones que utilizan bases de datos y aplicaciones Oracle, proporcionando una integración nativa y precios competitivos en el segmento de computación. | A pesar de sus avances, su ecosistema y su escala global siguen siendo menores que los de AWS, Azure o Google Cloud. | Aproximadamente entre **0,035 y 0,050 USD por vCPU-hora**, lo que lo sitúa entre los más económicos en infraestructura x86. |
 
 
-## Principales proveedores PaaS
-### Bases de datos
+### Principales proveedores PaaS
+#### Bases de datos
 
 La elección de un servicio gestionado de bases de datos en la nube depende de varios factores, incluyendo el tipo de base de datos que necesitas, tus requisitos de rendimiento, escalabilidad, presupuesto y preferencias técnicas. 
 
@@ -100,7 +108,7 @@ Existen otros como Microsoft Azure Kubernetes Service (AKS), IBM Cloud Kubernete
   * Microsoft Azure - El más usado: Azure App Service
     * Azure ofrece PaaS similares a los de sus competidores, AWS y GCP, desde servicios de almacenamiento, a despliegue de web apps (Azure App Service)
 
-## Principales proveedores cloud de SaaS:
+### Principales proveedores cloud de SaaS
 
   * Salesforce: es una plataforma líder de CRM (Customer Relationship management). Ayuda a las empresas a gestionar interacciones con los clientes, automatizar procesos de ventas, marketing y atención al cliente. También permite la personalización y programación de aplicaciones a través de su plataforma y su ecosistema/lenguaje programación AppExchange.
     

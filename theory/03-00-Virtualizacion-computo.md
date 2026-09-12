@@ -1,7 +1,8 @@
+# 3.0 Virtualización de cómputo
 
-![image](https://github.com/user-attachments/assets/8a0a48c2-3a13-4821-9365-ae571a32f88f)
-
-
+Antes de entrar en la nube propiamente dicha, conviene tener clara la escalera que va
+desde un servidor físico dedicado hasta la orquestación de contenedores, y qué cambia
+en cada escalón (recursos, aislamiento, tiempo de arranque, portabilidad...):
 
 | Característica                   | Máquina Física                      | Virtualización (Máquina Virtual)          | Contenedores (Docker)         | Kubernetes                                 |
 |----------------------------------|-------------------------------------|------------------------------------------|------------------------------------------|--------------------------------------------|

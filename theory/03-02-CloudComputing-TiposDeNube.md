@@ -1,6 +1,6 @@
-# 3. Cloud Computing
+# 3.2 Características y tipos de nube
 
-### 3.2.1 Caracteristicas de la nube
+## 3.2.1 Características de la nube
 
 * Las características diferenciadas de la nube son:
 
@@ -16,7 +16,7 @@
     * La nube no requiere una inversión en recursos de manera anticipada. Todo lo contrario, la nube permite a los consumidores pagar solo por lo que están usando, tanto en procesamiento como en almacenamiento. Esto es posible gracias a que el proveedor cloud tiene un sistema de monitorización/control del uso de los recursos cloud por parte de sus clientes, el cual es totalmente transparente al consumidor, lo cual incrementa la relación de confianza entre ambos.
 
 
-### 3.2.2 Tipos de nubes
+## 3.2.2 Tipos de nubes
 
 Existen tres tipos principales de "nube" (cloud computing):
 

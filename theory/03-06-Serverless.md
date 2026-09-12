@@ -1,10 +1,17 @@
-<img src="images/XaaS.png" style="zoom:67%;" />
+# 3.6 Serverless
+
+El esquema IaaS, PaaS y SaaS que vimos en el capítulo de [plataformas cloud](03-03-CloudComputing-Plataformas.md)
+se puede ampliar con dos modelos adicionales, más orientados a contenedores y funciones:
+
+| | **Infraestructura (IaaS)** | **Plataforma (PaaS)** | **Contenedor (CaaS)** | **Función (FaaS)** | **Software (SaaS)** |
+|---|---|---|---|---|---|
+| **Ejemplos** | AWS EC2, GCE, Azure VMs | AWS Elastic Beanstalk, App Engine, Azure Web Apps, EKS, GKE, AKS | Fargate, Cloud Run / App Engine Flexible, Azure Container Instances | Lambda, GCF, Azure Functions | Salesforce, Oracle, SAP, Google Workspace, Office 365 |
 
 ### Otros PaaS: Google App Engine (GAE)
 
 GAE nos brinda la oportunidad de las bondades de K8s, tales como el autoescalado, sin que tengamos que ser nosotros los que nos preocupemos por gestionar el cluster. Así, GAE se puede entender como un cluster de K8s gestionado automáticamente por Google. Es por ello por lo que todos nuestros esfuerzos se pueden centrar única y exclusivamente en el desarrollo del software (app), dejando la gestión del cluster a Google (sin más que especificar algunas propiedades del cluster para controlar costes, como pueden ser el máximo numero de instancias, etc.)
 
-Podemos entender GAE como el servicio ideal donde desplegar nuestros micro-servicios, los cuales conjuntamente constituyen un ecosistema interconectado, sobre el que podremos ir construyendo capas superiores de abstracción con el fin de acabar con el desarrollo monolítico. 
+Podemos entender GAE como el servicio ideal donde desplegar nuestros micro-servicios, los cuales conjuntamente constituyen un ecosistema interconectado, sobre el que podremos ir construyendo capas superiores de abstracción con el fin de acabar con el desarrollo monolítico.
 
 Una vez tengamos una versión inicial de nuestro aplicativo (app), podremos servirlo inmediatamente en uno de los dos entornos proporcionados por GAE:
 
@@ -12,7 +19,7 @@ Una vez tengamos una versión inicial de nuestro aplicativo (app), podremos serv
 
   * Python, Java, Node.js, PHP, Ruby, GO
 
-  Podremos disfrutar de un entorno "standard", de manera que GAE se encargará de contenerizar nuestro código y desplegarlo en instancias a muy bajo coste. 
+  Podremos disfrutar de un entorno "standard", de manera que GAE se encargará de contenerizar nuestro código y desplegarlo en instancias a muy bajo coste.
 
 * **Flexible**: En el caso que nuestro aplicativo esté contenerizado, y queramos lanzarlo como contenedor porque depende de librerías no estándares, o está escrito en un lenguaje no listado, o tiene unas necesidades computacionales algo más exigentes que las ofertadas en el entorno standard. El entorno de despliegue flexible nos permite una mayor personalización en términos de recursos, lo cual puede ser muy conveniente.
 
@@ -28,7 +35,7 @@ Finalmente, incluso deshaciéndonos de la responsabilidad de mantener el cluster
 
 Ambos dos se centran en el concepto de escalar a cero, es decir, de deshacernos del concepto de "servidor" (*serverless*) mediante la gestión activa y automática de infraestructura y plataforma de Google. Como veremos ambos están íntimamente relacionados entre sí, y su diferencia tiene que ver con los environments standard y flexible de GAE.
 
-Este paradigma de desarrollo se conoce como **Funtions as a Service** (FaaS), dado que el objetivo principal es la programación de una funcionalidad (que en última instancia se entiende que se ejecutará en reacción a un evento dado). El esquema IaaS, PaaS y SaaS que vimos anteriormente queda ampliado del siguiente modo:
+Este paradigma de desarrollo se conoce como **Functions as a Service** (FaaS), dado que el objetivo principal es la programación de una funcionalidad (que en última instancia se entiende que se ejecutará en reacción a un evento dado).
 
 De modo que en una arquitectura FaaS (serverless) lo único de lo que tenemos que hacernos cargo es de la gestión de los datos procesados o generados por la "función".
 
@@ -36,7 +43,7 @@ Las ventajas principales son:
 
 * No tendrás que aprovisionar, administrar ni actualizar servidores
 * Escala automáticamente según la carga. Se paga por el tiempo de procesamiento de la función
-* Funciones integradas de supervisión, registro y depuración 
+* Funciones integradas de supervisión, registro y depuración
 * Seguridad integrada a nivel de funciones y por función que se basa en el principio de privilegio mínimo
 * Capacidades de red clave para situaciones híbridas y de múltiples nubes
 
@@ -48,13 +55,9 @@ Cloud functions nos brinda la oportunidad única de ir directamente de código a
 
 💻 **QuickLab VII-02: Cloud Functions**
 
-* El objetivo de este lab es la demostración de como podemos desplegar de manera sencilla una función en Google Cloud Function. Para este propósito hemos creado una función en Python cuyo "trigger" es una llamada HTTP. El código y sumario de este QuickLab se puede encontrar en el siguiente: [link](https://github.com/**PENDING**/asr-cloud/tree/main/08-cloud-functions).
+* El objetivo de este lab es la demostración de como podemos desplegar de manera sencilla una función en Google Cloud Function. Para este propósito hemos creado una función en Python cuyo "trigger" es una llamada HTTP. El enunciado de esta práctica está en [asr-cloud-26/09-serverless/01-cloud-functions](https://github.com/AgustinICAI/asr-cloud-26/tree/main/09-serverless/01-cloud-functions).
 
 
 💻 **QuickLab VII-03: Cloud Run**
 
-* Tal y como hemos comentado en clase, existe una segunda opción para desplegar apps serverless, que tiene la conveniencia de aceptar **Docker Images** en lugar de **Functions**. Esta opción en GCP se llama Google Cloud Run. En este lab ponemos de manifiesto la sencillez y conveniencia del uso de GCR (documentación oficial [aquí](https://cloud.google.com/run)). El código y sumario de este QuickLab se puede encontrar en el siguiente: [link](https://github.com/**PENDING**/asr-cloud/tree/main/09-cloudrun). En este lab se muestran también opciones de gestión programática y de CICD.
-
-
-
-
+* Tal y como hemos comentado en clase, existe una segunda opción para desplegar apps serverless, que tiene la conveniencia de aceptar **Docker Images** en lugar de **Functions**. Esta opción en GCP se llama Google Cloud Run. En este lab ponemos de manifiesto la sencillez y conveniencia del uso de GCR (documentación oficial [aquí](https://cloud.google.com/run)). El enunciado de esta práctica está en [asr-cloud-26/09-serverless/02-cloudrun](https://github.com/AgustinICAI/asr-cloud-26/tree/main/09-serverless/02-cloudrun). En este lab se muestran también opciones de gestión programática y de CICD.

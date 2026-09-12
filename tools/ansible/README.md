@@ -1,8 +1,10 @@
+# Ansible
+
 Ansible es una plataforma para automatización IT para hacer que el proceso de set-up y configuración sistemas sea industriazible a medida que el volumen de infraestructura crece.
 
-# Componentes
+## Componentes
 
-## ANSIBLE CLI
+### ANSIBLE CLI
 
 
 ### Instalación
@@ -36,20 +38,20 @@ https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html **
 
 Tal como se ve es un listado de IPs que se agrupan, por ejemplo, aquí el grupo de servidores 'desarrollo' tiene los servidores 192.168.15.1 y 192.168.15.2.
 
-#### Máquinas - Configurando los certificados de seguridad
+**Máquinas: configurando los certificados de seguridad**
 
 ```shell
 ssh-keygen -f ./ansible
 ```
 
-#### En el caso que trabajemos con un proveedor cloud, por defecto no existirá (ni debe existir) conectividad con la máquina. Es necesario:
+En el caso que trabajemos con un proveedor cloud, por defecto no existirá (ni debe existir) conectividad con la máquina. Es necesario:
 1. Obtener acceso directo a la máquina. Puede ser desde un cloud shell o desde tu equipo.
 2. En caso de hacerlo desde tu equipo será necesario abrir las reglas firewall que permitan este acceso.
 3. Añadir la clave creada en el paso anterior en la consola del proveedor para poder acceder a la máquina. 
 
 En el caso de GCP se haría desde la siguiente pantalla
 
-<img src="images/gcp-ssh-metadata.png" alt="azure-console" style="zoom:67%;" />
+![gcp-ssh-metadata](images/gcp-ssh-metadata.png)
 
 
 Ahora que ya tenemos todo instalado y configurado ya podemos empezar a ejecutar comandos. La sintaxis de Ansible es la siguiente:
@@ -62,24 +64,24 @@ ansible  <servidor/grupo/pattern> -m <módulo> -a <argumentos>
 
 De esta manera podemos ejecutar cantidad de cosas:
 
-#### Reiniciar el servicio httpd en los servidores de  preproduccion
+**Reiniciar el servicio httpd en los servidores de preproducción**
 ```shell
 ansible all -m service -a "name=apache2 state=restarted" --become
 ```
 
-#### Copiar el fichero 'hola.txt' a los servidores de 'preproduccion' y 'produccion'
+**Copiar el fichero 'hola.txt' a los servidores de 'preproduccion' y 'produccion'**
 ```shell
 ansible all -m copy -a "src=~/hola.txt dest=/tmp/hola.txt"
 ```
 
-#### Ejecutar '/bin/echo hello' en el servidor '192.168.15.1'. Si no ponemos módulo interpreta que el módulo es 'shell'
+**Ejecutar `/bin/echo hello` en el servidor `192.168.15.1`.** Si no ponemos módulo interpreta que el módulo es `shell`:
 ```shell
 ansible 192.168.15.1 -m shell -a "/bin/echo hello"
 ansible 192.168.15.1 -a "/bin/echo hello"
 ```
 Así de fácil es montarte un sistema automatizado con Ansible, tenéis la documentación completa aquí http://docs.ansible.com/ .
 
-## PLAYBOOKS
+## Playbooks
 Se trata de las plantillas que se utilizan para lanzar instrucciones ordenadas sin ningún tipo de interacción humana. Estas plantillas pueden ser tanto para crear infraestructura o/y interactuar con la infraestructura para la instalación/configuración de componentes.
 
 Los módulos de Ansible ejecutan tareas. Se pueden combinar una o más tareas de Ansible para hacer un "play". Se pueden combinar dos o más "plays" para crear un Ansible Playbook. Los Playbooks de Ansible son listas de tareas que se ejecutan automáticamente en los hosts. Los grupos de hosts forman su inventario de Ansible. (como hemos visto con el CLI)

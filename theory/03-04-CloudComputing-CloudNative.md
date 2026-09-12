@@ -1,10 +1,8 @@
-# 3. Cloud Computing
-
-### 3.4 Diseño y despliegue de aplicaciones nativas Cloud
+# 3.4 Diseño y despliegue de aplicaciones nativas Cloud
 
 Ahora que tenemos un buen conocimiento de lo que nos oferta una nube (bien sea pública o privada), vamos a proceder con un salto gradual desde el desarrollo local (típicamente monolítico) hasta el desarrollo nativo en nube (*cloud native*) en el que se aprovecharán todo el potencial ofertado por el *cloud computing*.
 
-#### Aplicaciones nativas Cloud (Cloud native applications): Introducción
+## Aplicaciones nativas Cloud (Cloud native applications): Introducción
 
 El concepto del desarrollo de **aplicaciones nativas cloud** hace referencia a un paradigma de desarrollo de software que utiliza el entorno cloud para crear y desplegar aplicaciones en infraestructuras dinámicas y flexibles, como es el caso de la nube. 
 
@@ -17,27 +15,24 @@ Este paradigma de desarrollo suele ir acompañado del uso de las siguientes tecn
 * Funciones (FaaS) y plataformas *serverless* ([Serverless computing](https://en.wikipedia.org/wiki/Serverless_computing))
 * Integración continua y Entrega continua ([Continuos Integration and Continuos Delivery](https://en.wikipedia.org/wiki/CI/CD) [CI/CD])
 
-<img src="images/cloud-native.png" alt="cloud-native" style="zoom:67%;" />
+![cloud-native](images/cloud-native.png)
 
-
-
-### Ventajas DEVOPS
-- Adecuado para time-to-market ajustado. 
+## Ventajas DevOps
+- Adecuado para time-to-market ajustado.
 - En caso de startups o equipos específicos en grandes empresas, DEVOPS significa que quien desarrolla opera.
 - Para grandes empresas que se suele buscar perfiles DEVOPS específicos que trabajen conjuntamente con desarrollares y operaciones evitando que múltiples equipos se encarguen de las mismas tareas. Esta forma de trabajar es lo que ha evolucionado a "Platform engineering".
 - Mayor número de subidas e iteraciones.
 - Software a la larga tiende a tener buena calidad y seguro, ya que se automatizan test, test de seguridad, pruebas de rendimiento.
 - Se define unos estandares de como se construye y despliega.
 
-### Ventajas CICD
+## Ventajas CI/CD
 - Cambios de código más pequeños
 - Mayor frecuencia de subidas y mayor velocidad de subidas
 - Más fiabilidad de las pruebas mediante pruebas automatizadas
 - Aumentar la transparencia y la responsabilidad del equipo.
 - NO SE REALIZAN ACCIONES MANUALES
 
-
-### Ventajas Contenerización y microservicios
+## Ventajas Contenerización y microservicios
 
 Uno de las características fundamentales que diferencia una aplicación nativa cloud de una aplicación tradicional es precisamente la contenerización y su infraestructura de microservicios.
 
@@ -100,7 +95,6 @@ Aquí el problema está en lo poco eficiente que es levantar una máquina por ca
 Para este problema de orquestación de contenedores y arquitectura asociada existen principalmente dos soluciones: `docker swarm` y `kubernetes engine`. Aunque ambos dos proponen una solución a un mismo problema, existen pequeñas diferencias que hacen que Kubernetes haya sido el más usado en la industria. Muy resumidamente:
 
 - [Docker swarm](https://docs.docker.com/engine/swarm/): es una herramienta de orquestación de contenedores, la cual nos permite llegar a la solución deseada de lanzar imágenes en diferentes máquinas (hosts)
-- 
 - [Kubernetes](https://kubernetes.io/): es una herramienta de orquestación de contenedores, que como en el caso de docker swarm nos permite el lanzamiento de imágenes en diferentes hosts, pero su *focus* principal ha sido la automatización y habilidad de adaptarse a escenarios de alta demanda. 
 
 Así pues, se puede decir que la mayor diferencia entre Docker swarm y Kubernetes es la facilidad de uso. Nada ilustra mejor esto que un ejemplo sobre cómo cada uno maneja las redes. Cuando se crea un clúster de contenedores con Docker swarm, esos contenedores generalmente están disponibles en nuestra red porque ha dirigido un puerto externo a un puerto interno desde el comando `docker`. En otras palabras, no tenemos que configurar una capa de red separada dentro de los archivos YAML. Sin embargo, con Kubernetes, debemos configurar una capa de red adicional que es la que usa la virtualización de los contenedores. 

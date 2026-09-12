@@ -1,13 +1,14 @@
-# 3. Cloud Computing
+# 3.1 De la virtualización a la nube
 
-### 3.1 De la virtualización a la nube
-
-
-* La virtualización es una capa de abstracción sobre Hardware físico que nos permite dividir dichos recursos físicos (e.g., procesador, memoria o almacenamiento) en múltiples unidades ***virtuales*** con las que se pueden operar como si fuera Hardware independiente. 
+* La virtualización es una capa de abstracción sobre Hardware físico que nos permite dividir dichos recursos físicos (e.g., procesador, memoria o almacenamiento) en múltiples unidades ***virtuales*** con las que se pueden operar como si fuera Hardware independiente.
 
 * Por ejemplo, esto nos permite generar en un solo ordenador varias ***máquinas virtuales*** (VMs del inglés *virtual machines*) que se comportan como ordenadores completamente independientes con una realidad física.
 
-  <img src="images/virtualisation.png" alt="Virtualized Server Installation" style="zoom:65%;" />
+  | | Instalación clásica de servidor | Instalación de servidor virtualizado |
+  |---|---|---|
+  | Capa superior | `APPLICATION` (una única aplicación) | `APP` / `OS` por cada VM (varias, una por bloque) |
+  | Capa intermedia | `OPERATING SYSTEM` | `VMware ESX` (hipervisor) |
+  | Capa base | Hardware físico | Hardware físico |
 
 * Los tipos de virtualización más populares son:
 
@@ -24,23 +25,26 @@
 
 * Pero, la nube no es simplemente virtualización. La nube conlleva la posibilidad de acceder a los recursos virtuales creados con la virtualización a través de redes privadas o públicas. Esta posibilidad conlleva, evidentemente, la necesidad de un conjunto de software y servicios que permiten su funcionamiento y gestión por parte de tanto el proveedor (*cloud provider*) como el usuario (*cloud consumer*). Este ecosistema de software y servicios suele seguir la siguiente estructura por capas:
 
-  <img src="images/layers-cloud.png" alt="Screenshot 2021-10-02 at 13.26.02" style="zoom:75%;" />
-
-
+  | Capa | Contenido |
+  |---|---|
+  | **Servicios** | Infrastructure as a Service (Server/Desktop/Storage/Network Cloud) · Platform as a Service (Middleware, Database, Java Runtime, Development Tooling, Web 2.0 App Runtime) · Software as a Service (Business Processes, Collaboration, Industry Applications, CRM/ERP/HR) |
+  | **Cloud Platform — Business Support System** | Billing/Pricing · Reporting · Order Management · Contracts Management · SLA Management · Account Management |
+  | **Cloud Platform — Operational Support System** | Infrastructure Management · Capacity Planning · Infrastructure Security · Metering · Monitoring · Provisioning |
+  | **Base** | Virtualized Hardware · Storage Resource Pool · Network Device Infrastructure |
 
 * Como se puede intuir del punto anterior, en el mundo cloud se pueden identificar ciertos "roles" característicos que son universales, como son por ejemplo:
 
   * Proveedor Cloud (Cloud Provider):
     * La compañía/organización que provee la infraestructura tecnológica cloud
-    * El proveedor cloud es responsable del mantenimiento de la infraestructura así como del cumplimiento con los acuerdos de disponibilidad (SLA, del inglés *Service-Level Agreement*) con el consumidor 
-  * Equipo Arquitectura/Equipo Desarrollado Cloud (Cloud Architect / Dev Teams): 
+    * El proveedor cloud es responsable del mantenimiento de la infraestructura así como del cumplimiento con los acuerdos de disponibilidad (SLA, del inglés *Service-Level Agreement*) con el consumidor
+  * Equipo Arquitectura/Equipo Desarrollado Cloud (Cloud Architect / Dev Teams):
     * Es la compañía/organización/persona que firma un acuerdo con el cloud provider para usar los servicios IT ofertados por el proveedor.
     * El departamento de arquitectura es el encargado de la realización de un primer proyecto llamado Landing Zone. Es el proyecto que sienta las bases para empezar a trabajar en la empresa con el nuevo proveedor cloud. Esto abarca: jerarquía de recursos, nomenclatura, redes, seguridad, automatización, organización interna, monitorización y alertado, integrandose con los sistemas ya existentes.
     * Por lo general, el desarrollador cloud usará los servicios IT del proveedor cloud correspondiente.
   * Operación/Administrador Cloud (Cloud Resource Administrator/Operator):
-    * Es la compañía/organización/persona que se encarga de la administración de los servicios basados en la infraestructura cloud (incluyendo los propios servicios cloud ofertados por el proveedor). 
+    * Es la compañía/organización/persona que se encarga de la administración de los servicios basados en la infraestructura cloud (incluyendo los propios servicios cloud ofertados por el proveedor).
     * Puede ser o no parte de la entidad consumidora, ya que podría tratarse de una compañía externa al consumidor que se ha contratado con el cometido de administrar los servicios creados por el consumidor en la infraestructura cloud
-  * Seguridad (Cloud Auditor/Security): 
+  * Seguridad (Cloud Auditor/Security):
     * Es una compañía/organización independiente (normalmente acreditada) que lleva a cabo revisiones regulares en relación a controles de seguridad, privacidad y continuidad de negocio.
     * El objetivo principal de este rol es el de generar un informe exhaustivo e independiente sobre el entorno cloud que ayude a identificar vulnerabilidades y puntos débiles, que habrán de ser subsanados en un plazo determinado, para fortalecer la relación de confianza entre el consumidor y el proveedor cloud.
   * Finanzas:
@@ -49,12 +53,11 @@
 
 * Normalmente, todo proveedor cloud ofrece una interfaz gráfica muy accesible y agradable para el usuario, así como interfaces programáticas (APIs) que permiten la automatización de tareas repetitivas.
 
-### 3.3 Prácticas ágiles de trabajar en el cloud
+## 3.1.1 Prácticas ágiles de trabajar en el cloud
 
 DevOps, SRE (Site Reliability Engineering) y Platform Engineering son roles y prácticas relacionados en el mundo de la tecnología y la ingeniería de software, pero tienen enfoques y responsabilidades ligeramente diferentes. Aquí hay una breve descripción de cada uno y las diferencias clave:
 
-
-#### DevOps (Desarrollo y Operaciones):
+### DevOps (Desarrollo y Operaciones)
 
 *Enfoque*: DevOps es una filosofía cultural y un conjunto de prácticas que busca la colaboración estrecha entre los equipos de desarrollo y operaciones para automatizar y acelerar la entrega de software.
 
@@ -62,7 +65,7 @@ DevOps, SRE (Site Reliability Engineering) y Platform Engineering son roles y pr
 
 *Objetivo*: La principal meta de DevOps es reducir el tiempo entre la escritura de código y la puesta en producción, mejorando la calidad y la estabilidad de las aplicaciones.
 
-#### SRE (Site Reliability Engineering):
+### SRE (Site Reliability Engineering)
 
 *Enfoque*: SRE es una disciplina que se enfoca en garantizar la confiabilidad y la disponibilidad de los sistemas y servicios. Fue desarrollada por Google y se centra en la automatización y la gestión de la confiabilidad.
 
@@ -70,7 +73,7 @@ DevOps, SRE (Site Reliability Engineering) y Platform Engineering son roles y pr
 
 *Objetivo*: El principal objetivo de SRE es garantizar que los sistemas sean altamente confiables y estén disponibles, reduciendo al mínimo el tiempo de inactividad no planificado.
 
-#### Platform Engineer (Ingeniero de Plataforma):
+### Platform Engineer (Ingeniero de Plataforma)
 
 *Enfoque*: Los Platform Engineers se centran en construir y mantener las plataformas tecnológicas que permiten a los equipos de desarrollo implementar y ejecutar sus aplicaciones de manera eficiente y segura.
 
@@ -78,8 +81,9 @@ DevOps, SRE (Site Reliability Engineering) y Platform Engineering son roles y pr
 
 *Objetivo*: Los Platform Engineers buscan proporcionar a los equipos de desarrollo una plataforma sólida y confiable en la que puedan implementar sus aplicaciones y servicios de manera efectiva y rápida.
 
-
 En resumen, mientras que DevOps se enfoca en la colaboración y la automatización en todo el ciclo de vida del software, SRE se centra en la confiabilidad y la disponibilidad de los sistemas, y los Platform Engineers se dedican a crear y mantener las plataformas tecnológicas que permiten que las aplicaciones se ejecuten de manera eficiente y segura. Los 3 son modelos válidos, y dependerá de los recursos, experiencia, o diversidad de los equipos la adopción de un modelo u otro.
 
-  <img src="images/devs-teams-ways.jpg" style="zoom:75%;" />
-  
+| | DevOps | SRE | Platform Engineering |
+|---|---|---|---|
+| **Unidad de trabajo** | Un mismo equipo cubre cada producto de principio a fin | Equipos de producto entregan (*handoff*) a un equipo de fiabilidad compartido | Equipos de producto consumen una plataforma y herramientas comunes |
+| **Lo que comparten** | Cultura y prácticas, no una plataforma técnica | Un proceso de *handoff* y unos SLOs comunes | Una plataforma técnica y un *tooling* unificados |
