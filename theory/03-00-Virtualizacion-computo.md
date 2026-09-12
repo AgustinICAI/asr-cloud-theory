@@ -4,6 +4,61 @@ Antes de entrar en la nube propiamente dicha, conviene tener clara la escalera q
 desde un servidor físico dedicado hasta la orquestación de contenedores, y qué cambia
 en cada escalón (recursos, aislamiento, tiempo de arranque, portabilidad...):
 
+```mermaid
+flowchart TB
+    subgraph C1["1. Servidor tradicional"]
+        direction TB
+        A1["Aplicación"]
+        A2["JAVA / LIBS"]
+        A3["Linux"]
+        A4(("Servidor físico"))
+        A1 --- A2 --- A3 --- A4
+    end
+
+    subgraph C2["2. Servidores virtuales"]
+        direction TB
+        B1["Aplicación A<br/>JAVA / LIBS"]
+        B2["Aplicación B<br/>JAVA / LIBS"]
+        B3["Linux (Ubuntu)"]
+        B4["Linux (RHEL)"]
+        B5["Hipervisor (p.ej. VMware ESX)"]
+        B6(("Servidor físico"))
+        B1 --- B3 --- B5
+        B2 --- B4 --- B5
+        B5 --- B6
+    end
+
+    subgraph C3["3. Motor de contenedores en una VM"]
+        direction TB
+        D1["Contenedor 1<br/>Comp. A + JAVA/LIBS"]
+        D2["Contenedor 2<br/>Comp. A + JAVA/LIBS"]
+        D3["Contenedor 3<br/>Comp. B + JAVA/LIBS"]
+        D4["Motor de contenedores<br/>(Docker / Podman)"]
+        D5["SSOO (p.ej. RHEL 9)"]
+        D6["Virtualización *"]
+        D7(("Servidor físico"))
+        D1 --- D4
+        D2 --- D4
+        D3 --- D4
+        D4 --- D5 --- D6 --- D7
+    end
+
+    subgraph C4["4. Orquestador multi-VM (Kubernetes)"]
+        direction TB
+        E1["Contenedores de<br/>Aplicación A y B<br/>(varias réplicas)"]
+        E2["Plataforma de orquestación<br/>de contenedores"]
+        E3["SSOO nodo 1"]
+        E4["SSOO nodo 2"]
+        E5["SSOO nodo 3"]
+        E6(("Servidores físicos"))
+        E1 --- E2
+        E2 --- E3 --- E6
+        E2 --- E4 --- E6
+        E2 --- E5 --- E6
+    end
+```
+*Las capas de virtualización pueden estar sobre una máquina virtual o directamente sobre una instancia física.*
+
 | Característica                   | Máquina Física                      | Virtualización (Máquina Virtual)          | Contenedores (Docker)         | Kubernetes                                 |
 |----------------------------------|-------------------------------------|------------------------------------------|------------------------------------------|--------------------------------------------|
 | **Definición**                   | Hardware físico en el que se ejecuta un sistema operativo. | Emulación de un hardware completo para ejecutar múltiples sistemas operativos sobre un mismo hardware físico. | Aislamiento de aplicaciones y sus dependencias en procesos ligeros sobre el mismo SO. | Orquestación y gestión de contenedores en clústeres distribuidos. |
