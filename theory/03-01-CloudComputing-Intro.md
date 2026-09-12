@@ -37,13 +37,18 @@
   * Proveedor Cloud (Cloud Provider):
     * La compañía/organización que provee la infraestructura tecnológica cloud
     * El proveedor cloud es responsable del mantenimiento de la infraestructura así como del cumplimiento con los acuerdos de disponibilidad (SLA, del inglés *Service-Level Agreement*) con el consumidor
-  * Equipo Arquitectura/Equipo Desarrollado Cloud (Cloud Architect / Dev Teams):
+  * Cliente Cloud (Cloud Consumer):
     * Es la compañía/organización/persona que firma un acuerdo con el cloud provider para usar los servicios IT ofertados por el proveedor.
-    * El departamento de arquitectura es el encargado de la realización de un primer proyecto llamado Landing Zone. Es el proyecto que sienta las bases para empezar a trabajar en la empresa con el nuevo proveedor cloud. Esto abarca: jerarquía de recursos, nomenclatura, redes, seguridad, automatización, organización interna, monitorización y alertado, integrandose con los sistemas ya existentes.
-    * Por lo general, el desarrollador cloud usará los servicios IT del proveedor cloud correspondiente.
+    * Dentro de esta organización conviven, entre otros, los dos equipos siguientes: Arquitectura y Desarrollo.
+  * Equipo de Arquitectura Cloud (Cloud Architect):
+    * Es el equipo encargado de sentar las bases técnicas y de gobierno con las que la empresa va a operar en el nuevo proveedor cloud, normalmente mediante un primer proyecto llamado Landing Zone. Esto abarca: jerarquía de recursos, nomenclatura, redes, seguridad, automatización, organización interna, monitorización y alertado, integrándose con los sistemas ya existentes.
+    * Este trabajo de gobierno es el que permite que, a partir de ahí, el resto de equipos (empezando por Desarrollo) puedan operar con autonomía y seguridad dentro del proyecto/cuenta cloud.
+  * Equipo de Desarrollo (Dev Teams):
+    * Son los equipos que, dentro del marco ya definido por Arquitectura, consumen los servicios IT del proveedor cloud para construir, desplegar y operar sus propias aplicaciones.
   * Operación/Administrador Cloud (Cloud Resource Administrator/Operator):
     * Es la compañía/organización/persona que se encarga de la administración de los servicios basados en la infraestructura cloud (incluyendo los propios servicios cloud ofertados por el proveedor).
-    * Puede ser o no parte de la entidad consumidora, ya que podría tratarse de una compañía externa al consumidor que se ha contratado con el cometido de administrar los servicios creados por el consumidor en la infraestructura cloud
+    * Puede ser o no parte de la entidad consumidora, ya que podría tratarse de una compañía externa al consumidor que se ha contratado con el cometido de administrar los servicios creados por el consumidor en la infraestructura cloud.
+    * Este rol no siempre es un equipo separado: en organizaciones DevOps-maduras es el propio equipo de Desarrollo quien opera lo que construye. En [3.1.1](#311-prácticas-ágiles-de-trabajar-en-el-cloud) vemos justamente cómo se organiza esa responsabilidad de operación (DevOps, SRE, Platform Engineering).
   * Seguridad (Cloud Auditor/Security):
     * Es una compañía/organización independiente (normalmente acreditada) que lleva a cabo revisiones regulares en relación a controles de seguridad, privacidad y continuidad de negocio.
     * El objetivo principal de este rol es el de generar un informe exhaustivo e independiente sobre el entorno cloud que ayude a identificar vulnerabilidades y puntos débiles, que habrán de ser subsanados en un plazo determinado, para fortalecer la relación de confianza entre el consumidor y el proveedor cloud.
@@ -55,35 +60,44 @@
 
 ## 3.1.1 Prácticas ágiles de trabajar en el cloud
 
-DevOps, SRE (Site Reliability Engineering) y Platform Engineering son roles y prácticas relacionados en el mundo de la tecnología y la ingeniería de software, pero tienen enfoques y responsabilidades ligeramente diferentes. Aquí hay una breve descripción de cada uno y las diferencias clave:
+DevOps, SRE (Site Reliability Engineering) y Platform Engineering **no son tres alternativas al mismo nivel** entre las que una empresa elige una sola, como si fueran sabores distintos de lo mismo. Son más bien **tres capas que se apoyan una en otra**: una filosofía, una forma concreta de llevarla a la práctica con métricas, y una forma de escalar esa práctica cuando hay muchos equipos.
 
 ### DevOps (Desarrollo y Operaciones)
 
-*Enfoque*: DevOps es una filosofía cultural y un conjunto de prácticas que busca la colaboración estrecha entre los equipos de desarrollo y operaciones para automatizar y acelerar la entrega de software.
+*Enfoque*: DevOps es, ante todo, una **filosofía cultural**, no un equipo con un manual de instrucciones concreto: busca derribar el muro entre quien desarrolla y quien opera, de manera que quien construye el software también se responsabilice de que funcione en producción ("*you build it, you run it*").
 
-*Responsabilidades*: Los equipos de DevOps se centran en automatizar el ciclo de vida del software, desde la codificación y la integración hasta la implementación y la monitorización. También trabajan en la gestión de la configuración y la infraestructura como código (IaC).
+*Responsabilidades*: automatizar el ciclo de vida completo del software (codificación, integración, despliegue, monitorización), apoyándose en infraestructura como código (IaC) y en CI/CD.
 
-*Objetivo*: La principal meta de DevOps es reducir el tiempo entre la escritura de código y la puesta en producción, mejorando la calidad y la estabilidad de las aplicaciones.
+*Objetivo*: reducir el tiempo entre escribir código y tenerlo en producción, sin sacrificar calidad ni estabilidad.
 
 ### SRE (Site Reliability Engineering)
 
-*Enfoque*: SRE es una disciplina que se enfoca en garantizar la confiabilidad y la disponibilidad de los sistemas y servicios. Fue desarrollada por Google y se centra en la automatización y la gestión de la confiabilidad.
+*Enfoque*: SRE, nacida en Google, es una **implementación concreta y bastante prescriptiva** de la filosofía DevOps. Como dice el propio libro de SRE de Google: *"class SRE implements interface DevOps"*. Su aportación diferencial es medir la fiabilidad en vez de darla por sentada:
 
-*Responsabilidades*: Los SREs se concentran en la automatización de tareas operativas, el establecimiento de SLAs (Service Level Agreements) y la implementación de medidas proactivas para evitar interrupciones.
+- **SLI** (*Service Level Indicator*): una métrica de fiabilidad (p.ej. % de peticiones respondidas en menos de 200ms).
+- **SLO** (*Service Level Objective*): el objetivo sobre esa métrica (p.ej. 99.9% al mes).
+- **Error budget**: el margen de fallo que te queda antes de incumplir el SLO. Mientras hay margen, el equipo prioriza velocidad y nuevas *features*; cuando se agota, se prioriza estabilidad y se congelan lanzamientos.
 
-*Objetivo*: El principal objetivo de SRE es garantizar que los sistemas sean altamente confiables y estén disponibles, reduciendo al mínimo el tiempo de inactividad no planificado.
+*Responsabilidades*: automatización de tareas operativas, reducción del *toil* (trabajo manual repetitivo, típicamente acotado a un máximo del tiempo del equipo), *postmortems* sin buscar culpables (*blameless*), y gestión activa del error budget.
 
-### Platform Engineer (Ingeniero de Plataforma)
+*Objetivo*: que la fiabilidad sea una decisión de ingeniería medible, no una sensación.
 
-*Enfoque*: Los Platform Engineers se centran en construir y mantener las plataformas tecnológicas que permiten a los equipos de desarrollo implementar y ejecutar sus aplicaciones de manera eficiente y segura.
+⚠️ Matiz importante: SRE **no es "tirarle la operación a otro equipo"**. Quien desarrolla el servicio sigue de guardia; un equipo de SRE solo asume la operación de un servicio si este cumple unos requisitos mínimos de fiabilidad y observabilidad, y puede devolver esa responsabilidad al equipo de desarrollo si el error budget se agota sistemáticamente. Es una relación con criterios de entrada y salida, no un *handoff* sin más.
 
-*Responsabilidades*: Esto implica la gestión de la infraestructura subyacente, la creación de herramientas y servicios para la automatización de implementaciones, la seguridad, la escalabilidad y la eficiencia operativa.
+### Platform Engineering
 
-*Objetivo*: Los Platform Engineers buscan proporcionar a los equipos de desarrollo una plataforma sólida y confiable en la que puedan implementar sus aplicaciones y servicios de manera efectiva y rápida.
+*Enfoque*: Platform Engineering aparece cuando el modelo "cada equipo es dueño de su propio DevOps/SRE" deja de escalar: con decenas o cientos de equipos, cada uno acaba reinventando su propio pipeline de CI/CD, su propio cluster, su propia observabilidad... con el consiguiente coste y falta de estandarización.
 
-En resumen, mientras que DevOps se enfoca en la colaboración y la automatización en todo el ciclo de vida del software, SRE se centra en la confiabilidad y la disponibilidad de los sistemas, y los Platform Engineers se dedican a crear y mantener las plataformas tecnológicas que permiten que las aplicaciones se ejecuten de manera eficiente y segura. Los 3 son modelos válidos, y dependerá de los recursos, experiencia, o diversidad de los equipos la adopción de un modelo u otro.
+*Responsabilidades*: un equipo de plataforma construye y mantiene una **plataforma interna de autoservicio** (*Internal Developer Platform*, IDP) con "caminos asfaltados" (*golden paths*): plantillas, *pipelines* y herramientas ya integradas y con las buenas prácticas de seguridad/observabilidad aplicadas por defecto.
+
+*Objetivo*: que el resto de equipos conserve la autonomía y velocidad que promete DevOps, pero sin que cada uno necesite ser experto en infraestructura, reduciendo así la carga cognitiva de cada equipo de producto.
+
+### Resumen
 
 | | DevOps | SRE | Platform Engineering |
 |---|---|---|---|
-| **Unidad de trabajo** | Un mismo equipo cubre cada producto de principio a fin | Equipos de producto entregan (*handoff*) a un equipo de fiabilidad compartido | Equipos de producto consumen una plataforma y herramientas comunes |
-| **Lo que comparten** | Cultura y prácticas, no una plataforma técnica | Un proceso de *handoff* y unos SLOs comunes | Una plataforma técnica y un *tooling* unificados |
+| **Qué es** | Una cultura/filosofía | Una disciplina de ingeniería que la implementa con métricas | Una disciplina que la escala construyendo una plataforma |
+| **Mecanismo clave** | Automatización + responsabilidad compartida | SLI/SLO + error budget | Self-service + *golden paths* |
+| **¿Quién opera el servicio?** | Quien lo construye | Quien lo construye, con soporte de SRE si cumple el SLO | Quien lo construye, apoyándose en la plataforma común |
+
+En la práctica, las tres conviven: una organización con cultura DevOps puede tener un equipo de SRE que aplique el rigor de los error budgets a sus servicios más críticos, y un equipo de Platform Engineering que le dé a todos los demás equipos las herramientas para trabajar así sin fricción.
