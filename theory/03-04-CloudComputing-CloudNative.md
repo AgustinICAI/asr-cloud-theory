@@ -17,13 +17,50 @@ Este paradigma de desarrollo suele ir acompañado del uso de las siguientes tecn
 
 ![cloud-native](images/cloud-native.png)
 
-## Ventajas DevOps
-- Adecuado para time-to-market ajustado.
-- En caso de startups o equipos específicos en grandes empresas, DEVOPS significa que quien desarrolla opera.
-- Para grandes empresas que se suele buscar perfiles DEVOPS específicos que trabajen conjuntamente con desarrollares y operaciones evitando que múltiples equipos se encarguen de las mismas tareas. Esta forma de trabajar es lo que ha evolucionado a "Platform engineering".
-- Mayor número de subidas e iteraciones.
-- Software a la larga tiende a tener buena calidad y seguro, ya que se automatizan test, test de seguridad, pruebas de rendimiento.
-- Se define unos estandares de como se construye y despliega.
+## La CNCF y la definición de "cloud native"
+
+Todo lo anterior (contenedores, microservicios, orquestación, *serverless*, CI/CD) no
+son tecnologías sueltas que coincidan por casualidad: es precisamente el terreno que
+cubre la **[Cloud Native Computing Foundation](https://www.cncf.io/)** (CNCF), la
+organización (parte de la [Linux Foundation](https://www.linuxfoundation.org/)) que
+desde 2015 aloja y da gobierno neutral a los proyectos open source que definen este
+paradigma. Nació junto con la donación de **Kubernetes** por parte de Google, que sigue
+siendo su proyecto insignia.
+
+La propia CNCF define *cloud native* como el conjunto de técnicas que permiten a las
+organizaciones construir y ejecutar aplicaciones **escalables** en entornos dinámicos
+modernos (público, privado, híbrido), apoyándose en:
+
+- **Contenedores** como unidad de empaquetado y ejecución.
+- **Microservicios** débilmente acoplados.
+- **Malla de servicios** (*service mesh*, p. ej. [Istio](https://istio.io/), que
+  usarás en la práctica de Kubernetes) para gestionar la comunicación entre ellos.
+- **Infraestructura inmutable**: en vez de parchear un servidor en caliente, se
+  sustituye por una nueva versión desplegada desde cero (exactamente lo que haces al
+  crear una nueva *instance template* o una nueva imagen de contenedor).
+- **APIs declarativas**: describes el estado deseado (un manifiesto YAML de
+  Kubernetes, una `Application` de ArgoCD) y un controlador se encarga de conseguirlo
+  y mantenerlo, en vez de dar instrucciones paso a paso de cómo llegar ahí.
+
+Los proyectos que aloja la CNCF pasan por tres niveles de madurez —**sandbox**
+(experimental), **incubating** (adopción creciente, ya usable en producción) y
+**graduated** (adoptado a gran escala, con gobierno y seguridad auditados)— visibles
+en el [CNCF Landscape](https://landscape.cncf.io/). De los proyectos **graduated** más
+relevantes, varios los vas a usar en este curso: **Kubernetes** (orquestación),
+**Helm** (empaquetado de aplicaciones k8s), **Argo** (ArgoCD, GitOps),
+**Istio** (*service mesh*) y **Prometheus** (observabilidad).
+
+## Prácticas ágiles: DevOps, SRE y Platform Engineering
+
+La forma de *trabajar* que acompaña a estas aplicaciones (quién las opera, cómo se
+mide su fiabilidad, cómo escala esa forma de trabajar a muchos equipos) ya la vimos en
+detalle en
+[3.1.1 Prácticas ágiles de trabajar en el cloud](03-01-CloudComputing-Intro.md#311-prácticas-ágiles-de-trabajar-en-el-cloud):
+DevOps como filosofía cultural, SRE como su implementación medible (SLI/SLO/*error
+budget*) y Platform Engineering como la forma de escalarla mediante una plataforma
+interna de autoservicio. No lo repetimos aquí; solo un apunte para conectar ambos
+capítulos: todo eso es lo que hace posible operar con soltura el resto de piezas de
+este capítulo (contenedores, microservicios, CI/CD) a medida que su número crece.
 
 ## Ventajas CI/CD
 - Cambios de código más pequeños
@@ -106,6 +143,13 @@ Así pues, Docker Swarm es mucho más sencillo en términos de uso y exploració
 * **Kubernetes**: Cuando queremos administrar una aplicación de microservicios contenerizados, escalables y automatizados.
 
 Es por esto mismo por lo que los principales proveedores de cloud ofertan directamente Kubernetes. En el caso de Google, Kubernetes se oferta parte de los servicios que podemos usar en la modalidad "pay as you go" y se denomina [**Google Kubernetes Engine**](https://cloud.google.com/kubernetes-engine/docs/quickstart) (GKE).
+
+No es casualidad que sea, con diferencia, el proyecto **graduated** más adoptado de la
+CNCF (ver más arriba): al ser una API declarativa y extensible, se ha convertido en la
+base sobre la que se construye el resto del ecosistema cloud native. En las prácticas
+guiadas de Kubernetes de este curso no te vas a quedar solo en Kubernetes "a pelo":
+añadirás GitOps con **ArgoCD** y *service mesh* con **Istio**, ambos también proyectos
+CNCF, encima del mismo clúster.
 
 K8s conlleva una curva de aprendizaje importante, pero debido a uso uso cada vez mayor en este curso daremos un mini-curso con algunos conceptos básicos y necesarios para introducir esta herramienta de increíble alcance, de la que se podría dar un curso completo para su total entendimiento. 
 
