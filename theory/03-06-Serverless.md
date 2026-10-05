@@ -5,11 +5,11 @@ se puede ampliar con dos modelos adicionales, más orientados a contenedores y f
 
 | | **Infraestructura (IaaS)** | **Plataforma (PaaS)** | **Contenedor (CaaS)** | **Función (FaaS)** | **Software (SaaS)** |
 |---|---|---|---|---|---|
-| **Ejemplos** | AWS EC2, GCE, Azure VMs | AWS Elastic Beanstalk, App Engine, Azure Web Apps, EKS, GKE, AKS | Fargate, Cloud Run, Azure Container Apps / Container Instances | Lambda, GCF, Azure Functions | Salesforce, Oracle, SAP, Google Workspace, Office 365 |
+| **Ejemplos** | AWS EC2, GCE, Azure VMs | AWS Elastic Beanstalk, Azure Web Apps, EKS, GKE, AKS | Fargate, Cloud Run, Azure Container Apps / Container Instances | Lambda, GCF, Azure Functions | Salesforce, Oracle, SAP, Google Workspace, Office 365 |
 
 ### Aplicaciones Serverless: El espíritu cloud native
 
-Las [plataformas de desarrollo clásicas](03-03-CloudComputing-Plataformas.md#plataformas-de-desarrollo-en-desuso) (PaaS como App Engine o Elastic Beanstalk) nos liberan de gestionar servidores, pero tienen una limitación: seguimos teniendo que mantener un mínimo de 1 instancia funcionando 24/7. Sin embargo, nuestro objetivo último siempre ha sido el llegar a una arquitectura que sea lo más dinámica posible, con la idea en mente de escalar hasta cero instancias si fuera posible, de manera que solo pagásemos realmente por aquello que usamos. Y este es precisamente el objetivo de las dos últimos servicios de hosting de aplicativos que vamos a ver, que son:
+Nuestro objetivo último siempre ha sido el llegar a una arquitectura que sea lo más dinámica posible, con la idea en mente de escalar hasta cero instancias si fuera posible, de manera que solo pagásemos realmente por aquello que usamos. Y este es precisamente el objetivo de las dos últimos servicios de hosting de aplicativos que vamos a ver, que son:
 
 * Cloud Functions
 * Cloud Run

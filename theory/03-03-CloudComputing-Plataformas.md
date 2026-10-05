@@ -99,21 +99,9 @@ Algunas lecturas de estos datos:
 | **IBM Cloud** | Ofrece una amplia gama de servicios empresariales y un fuerte enfoque en soluciones híbridas y locales, lo que lo convierte en una opción atractiva para organizaciones con infraestructura preexistente. | Su red de centros de datos es más limitada, y sus precios y acuerdos de nivel de servicio (SLA) resultan menos competitivos frente a los principales líderes del mercado. | ≈ **0,045–0,050 USD por vCPU-hora** (bx2-4x16, 4 vCPU / 16 GB, ≈ 0,18–0,20 USD/h según región). |
 | **Oracle Cloud** | Representa una opción óptima para organizaciones que utilizan bases de datos y aplicaciones Oracle, proporcionando una integración nativa y precios competitivos en el segmento de computación. | A pesar de sus avances, su ecosistema y su escala global siguen siendo menores que los de AWS, Azure o Google Cloud. | ≈ **0,023 USD por vCPU-hora** (E5.Flex: 0,03 USD por OCPU-hora + 0,002 USD por GB-hora; 1 OCPU = 2 vCPU). El más barato con diferencia, y mismo precio en todas las regiones. |
 
-Para que la comparación sea justa, todos los precios corresponden a máquinas de
-**propósito general x86, bajo demanda, Linux y con 4 GB de RAM por vCPU** (el precio
-incluye la memoria). Hay que tener en cuenta que:
+Precios orientativos (2026) de máquinas de propósito general x86, bajo demanda y con 4 GB de RAM por vCPU; en Oracle, 1 OCPU = 2 vCPU.
 
-* En AWS, Azure y GCP el precio por vCPU es **prácticamente el mismo** (diferencias de
-  ~5%): no es lo que debería decidir el proveedor. Lo que más cambia la factura son los
-  **descuentos por compromiso** (instancias reservadas, *savings plans*, *committed use
-  discounts*: 30–60%), las **máquinas *spot*/*preemptible*** (60–90% más baratas), la
-  región (Europa suele ser un 5–15% más cara que EE. UU.) y el **tráfico de salida** a
-  internet.
-* Una **vCPU** en estos proveedores es un hilo de ejecución (medio núcleo físico con
-  *hyperthreading*), mientras que la **OCPU** de Oracle es un núcleo físico completo (2
-  vCPU). Al comparar con Oracle hay que hacer esa conversión.
-* Los precios son orientativos (consultados en 2026) y cambian con frecuencia: para
-  cualquier estimación real, usa siempre las calculadoras oficiales de cada proveedor.
+Entre AWS, Azure y GCP la diferencia es mínima: lo que más cambia la factura son los descuentos por compromiso, las máquinas *spot*, la región y el tráfico de salida.
 
 ### Principales proveedores PaaS
 #### Bases de datos
