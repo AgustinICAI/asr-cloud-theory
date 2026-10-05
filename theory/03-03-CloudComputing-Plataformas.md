@@ -37,7 +37,51 @@ A continuación se muestra una tabla donde se compara la gestión del usuario en
 
 ## Proveedores cloud
 
-Los principales proveedores Cloud se pueden clasificar por el tipo de plataforma ofertada:
+Los principales proveedores Cloud se pueden clasificar por el tipo de plataforma ofertada.
+
+### Cuota de mercado de infraestructura cloud (IaaS + PaaS)
+
+Según Synergy Research Group, en el **segundo trimestre de 2026** el gasto mundial en
+servicios de infraestructura cloud (IaaS, PaaS y nube privada alojada) fue de unos
+**143.000 millones de dólares en un solo trimestre**, un **43% más** que un año antes (el
+mayor crecimiento en ocho años, impulsado sobre todo por la IA). Los tres grandes
+concentran casi dos tercios del mercado:
+
+| **Proveedor** | **Cuota Q2 2026** | **Cuota Q2 2025** | **Tendencia** |
+|---|---|---|---|
+| Amazon Web Services (AWS) | 28% | 30% | ⬇️ Sigue líder, pero pierde cuota |
+| Microsoft Azure | 20% | 20% | ➡️ Estable |
+| Google Cloud | 15% | 13% | ⬆️ El que más crece de los tres |
+| Alibaba Cloud | ~5% | — | Líder en China |
+| Oracle Cloud | ~3% | — | ⬆️ Creciendo por la demanda de IA |
+| IBM Cloud | ~2% | — | |
+| Salesforce | ~2% | — | |
+| Resto de proveedores | ~25% | — | |
+
+```mermaid
+pie showData
+    title Cuota de mercado cloud (Q2 2026, %)
+    "AWS" : 28
+    "Microsoft Azure" : 20
+    "Google Cloud" : 15
+    "Alibaba Cloud" : 5
+    "Oracle Cloud" : 3
+    "IBM Cloud" : 2
+    "Salesforce" : 2
+    "Resto" : 25
+```
+
+Algunas lecturas de estos datos:
+
+* AWS, Azure y Google suman el **63%** del mercado: es un mercado muy concentrado.
+* Que AWS pierda cuota no significa que venda menos: el mercado crece tan deprisa que
+  todos crecen en dinero, pero Google y Microsoft crecen más rápido.
+* Fuera de los tres grandes, cada proveedor tiene un nicho claro: Alibaba en China,
+  Oracle en clientes de sus bases de datos y aplicaciones, IBM en entornos híbridos y
+  grandes empresas.
+
+> Fuente: Synergy Research Group, informe del segundo trimestre de 2026. Las cuotas
+> cambian cada trimestre, así que tómalas como una foto del momento.
 
 ### Principales proveedores IaaS
 
@@ -47,14 +91,29 @@ Los principales proveedores Cloud se pueden clasificar por el tipo de plataforma
   * IBM Cloud
   * Oracle Cloud
 
-| **Proveedor** | **Aspecto más destacado (positivo)** | **Limitación principal (negativo)** | **Coste medio estimado por núcleo virtual (x86, On-Demand)** |
+| **Proveedor** | **Aspecto más destacado (positivo)** | **Limitación principal (negativo)** | **Coste medio estimado por vCPU (x86, On-Demand)** |
 |----------------|--------------------------------------|--------------------------------------|------------------------------------------|
-| **Amazon Web Services (AWS)** | Se caracteriza por ofrecer el catálogo más amplio y maduro de servicios en la nube, abarcando desde infraestructura hasta herramientas avanzadas de inteligencia artificial y análisis de datos. | Su elevada adopción global puede generar una percepción de atención poco personalizada, dado el volumen masivo de clientes que gestiona. | Aproximadamente **0,05 USD por vCPU-hora** para instancias de propósito general basadas en arquitectura x86. |
-| **Microsoft Azure** | Presenta una integración sobresaliente con entornos empresariales basados en Windows y Active Directory, al tiempo que ofrece soporte sólido para migraciones hacia Linux y otros sistemas abiertos. | Requiere un nivel de especialización técnica relativamente superior respecto a otros proveedores, especialmente en la configuración y gestión de servicios avanzados. | Entre **0,06 y 0,10 USD por vCPU-hora**, dependiendo del tipo de instancia y la región. |
-| **Google Compute Engine (GCP)** | Destaca por su énfasis en el rendimiento, la eficiencia del coste y la alta disponibilidad, beneficiándose de la infraestructura global de Google y su experiencia en escalabilidad. | Su oferta de infraestructura como servicio (IaaS) es menos extensa que la de AWS, y carece de soporte integral para entornos híbridos o locales. | En torno a **0,045 USD por vCPU-hora** para instancias estándar x86 en regiones europeas. |
-| **IBM Cloud** | Ofrece una amplia gama de servicios empresariales y un fuerte enfoque en soluciones híbridas y locales, lo que lo convierte en una opción atractiva para organizaciones con infraestructura preexistente. | Su red de centros de datos es más limitada, y sus precios y acuerdos de nivel de servicio (SLA) resultan menos competitivos frente a los principales líderes del mercado. | Estimado entre **0,065 y 0,085 USD por vCPU-hora** para servidores virtuales x86. |
-| **Oracle Cloud** | Representa una opción óptima para organizaciones que utilizan bases de datos y aplicaciones Oracle, proporcionando una integración nativa y precios competitivos en el segmento de computación. | A pesar de sus avances, su ecosistema y su escala global siguen siendo menores que los de AWS, Azure o Google Cloud. | Aproximadamente entre **0,035 y 0,050 USD por vCPU-hora**, lo que lo sitúa entre los más económicos en infraestructura x86. |
+| **Amazon Web Services (AWS)** | Se caracteriza por ofrecer el catálogo más amplio y maduro de servicios en la nube, abarcando desde infraestructura hasta herramientas avanzadas de inteligencia artificial y análisis de datos. | Su elevada adopción global puede generar una percepción de atención poco personalizada, dado el volumen masivo de clientes que gestiona. | ≈ **0,050 USD por vCPU-hora** (m7i.xlarge, 4 vCPU / 16 GB, ≈ 0,20 USD/h en EE. UU.). |
+| **Microsoft Azure** | Presenta una integración sobresaliente con entornos empresariales basados en Windows y Active Directory, al tiempo que ofrece soporte sólido para migraciones hacia Linux y otros sistemas abiertos. | Requiere un nivel de especialización técnica relativamente superior respecto a otros proveedores, especialmente en la configuración y gestión de servicios avanzados. | ≈ **0,048 USD por vCPU-hora** (D4s v5, 4 vCPU / 16 GB, ≈ 0,19 USD/h en EE. UU.). |
+| **Google Compute Engine (GCP)** | Destaca por su énfasis en el rendimiento, la eficiencia del coste y la alta disponibilidad, beneficiándose de la infraestructura global de Google y su experiencia en escalabilidad. | Su oferta de infraestructura como servicio (IaaS) es menos extensa que la de AWS, y carece de soporte integral para entornos híbridos o locales. | ≈ **0,049 USD por vCPU-hora** (n2-standard-4, 4 vCPU / 16 GB, ≈ 0,19 USD/h en EE. UU.; ≈ 0,053 en `europe-west1`). Las series E2 bajan a ≈ 0,034. |
+| **IBM Cloud** | Ofrece una amplia gama de servicios empresariales y un fuerte enfoque en soluciones híbridas y locales, lo que lo convierte en una opción atractiva para organizaciones con infraestructura preexistente. | Su red de centros de datos es más limitada, y sus precios y acuerdos de nivel de servicio (SLA) resultan menos competitivos frente a los principales líderes del mercado. | ≈ **0,045–0,050 USD por vCPU-hora** (bx2-4x16, 4 vCPU / 16 GB, ≈ 0,18–0,20 USD/h según región). |
+| **Oracle Cloud** | Representa una opción óptima para organizaciones que utilizan bases de datos y aplicaciones Oracle, proporcionando una integración nativa y precios competitivos en el segmento de computación. | A pesar de sus avances, su ecosistema y su escala global siguen siendo menores que los de AWS, Azure o Google Cloud. | ≈ **0,023 USD por vCPU-hora** (E5.Flex: 0,03 USD por OCPU-hora + 0,002 USD por GB-hora; 1 OCPU = 2 vCPU). El más barato con diferencia, y mismo precio en todas las regiones. |
 
+Para que la comparación sea justa, todos los precios corresponden a máquinas de
+**propósito general x86, bajo demanda, Linux y con 4 GB de RAM por vCPU** (el precio
+incluye la memoria). Hay que tener en cuenta que:
+
+* En AWS, Azure y GCP el precio por vCPU es **prácticamente el mismo** (diferencias de
+  ~5%): no es lo que debería decidir el proveedor. Lo que más cambia la factura son los
+  **descuentos por compromiso** (instancias reservadas, *savings plans*, *committed use
+  discounts*: 30–60%), las **máquinas *spot*/*preemptible*** (60–90% más baratas), la
+  región (Europa suele ser un 5–15% más cara que EE. UU.) y el **tráfico de salida** a
+  internet.
+* Una **vCPU** en estos proveedores es un hilo de ejecución (medio núcleo físico con
+  *hyperthreading*), mientras que la **OCPU** de Oracle es un núcleo físico completo (2
+  vCPU). Al comparar con Oracle hay que hacer esa conversión.
+* Los precios son orientativos (consultados en 2026) y cambian con frecuencia: para
+  cualquier estimación real, usa siempre las calculadoras oficiales de cada proveedor.
 
 ### Principales proveedores PaaS
 #### Bases de datos
@@ -110,8 +169,31 @@ Existen otros como Microsoft Azure Kubernetes Service (AKS), IBM Cloud Kubernete
 
 ### Principales proveedores cloud de SaaS
 
-  * Salesforce: es una plataforma líder de CRM (Customer Relationship management). Ayuda a las empresas a gestionar interacciones con los clientes, automatizar procesos de ventas, marketing y atención al cliente. También permite la personalización y programación de aplicaciones a través de su plataforma y su ecosistema/lenguaje programación AppExchange.
-    
-  * Microsoft: sus principales productos son Microsoft 365 y Azure AD (nuevo Microsoft Entra Id) 
-    
+  * Salesforce: es una plataforma líder de CRM (Customer Relationship management). Ayuda a las empresas a gestionar interacciones con los clientes, automatizar procesos de ventas, marketing y atención al cliente. También permite la personalización y programación de aplicaciones a través de su plataforma (con su propio lenguaje, Apex) y su *marketplace* de aplicaciones AppExchange.
+
+  * Microsoft: sus principales productos son Microsoft 365, Dynamics 365 y Azure AD (nuevo Microsoft Entra ID)
+
+  * SAP: software de gestión empresarial (ERP), cada vez más ofrecido como servicio (SAP S/4HANA Cloud, SuccessFactors)
+
+  * Oracle: aplicaciones empresariales como servicio (Oracle Fusion Cloud ERP, NetSuite)
+
   * Google: Google Workspace, Google Analytics y Google Ads
+
+#### Cuota de mercado SaaS
+
+El mercado SaaS está mucho **más repartido** que el de infraestructura: los cinco
+mayores proveedores apenas suman un tercio del mercado, frente al 63% que acaparan los
+tres grandes en infraestructura. Cada uno domina su nicho (ofimática, CRM, ERP...):
+
+| **Proveedor** | **Cuota SaaS (2024, aprox.)** | **Productos principales** |
+|---|---|---|
+| Microsoft | ~11% | Microsoft 365, Dynamics 365, Entra ID |
+| Salesforce | ~10% | CRM (Sales Cloud, Service Cloud), Slack |
+| SAP | ~5% | ERP (S/4HANA Cloud), SuccessFactors |
+| Oracle | ~4% | Fusion Cloud ERP, NetSuite |
+| Google | ~3,5% | Google Workspace |
+| Resto | ~66% | Adobe, ServiceNow, Workday, Zoom, Atlassian... |
+
+En segmentos concretos la concentración es mucho mayor: por ejemplo, en **CRM**
+Salesforce tiene en torno al **20%** del mercado, unas cinco veces más que Microsoft u
+Oracle (≈ 4% cada uno).
