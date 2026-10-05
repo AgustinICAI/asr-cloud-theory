@@ -123,10 +123,11 @@ Tipo de base de datos: SQL Server principalmente, aunque también da bases de da
 Ventajas: Integración con servicios de Azure, escalabilidad, seguridad avanzada, copias de seguridad automáticas.
 Desventajas: Enfoque en SQL Server, puede ser costoso.
 
-#### Google Firebase Realtime Database / Firestore:
-Tipo de base de datos: NoSQL (Firestore), JSON (Realtime Database).
-Ventajas: Escalabilidad en tiempo real, sincronización en tiempo real, fácil integración con aplicaciones móviles y web.
-Desventajas: Limitaciones en consultas complejas.
+#### Google Firebase (Backend as a Service, BaaS)
+Más que una base de datos, Firebase es una plataforma completa de *backend* para aplicaciones móviles y web: la app se conecta directamente a sus servicios, sin necesidad de desarrollar ni mantener un servidor propio.
+- Piezas principales: bases de datos Firestore (NoSQL) y Realtime Database (JSON), Authentication (usuarios y login con Google, Apple, email...), Cloud Storage (ficheros), Hosting (webs) y Cloud Functions (FaaS).
+- Ventajas: desarrollo muy rápido (ideal para prototipos y apps móviles), sincronización en tiempo real y escalado automático.
+- Desventajas: limitaciones en consultas complejas, costes difíciles de prever cuando crece el uso y fuerte dependencia de Google (*vendor lock-in*).
 
 #### MongoDB Atlas:
 Tipo de base de datos: MongoDB (NoSQL).
