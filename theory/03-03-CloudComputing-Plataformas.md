@@ -177,11 +177,6 @@ sido sustituidos por dos modelos que veremos más adelante:
 Ambos modelos escalan a cero (no pagas si no hay peticiones) y se tratan en el tema de
 [Serverless](./03-06-Serverless.md).
 
-La idea de "subo mi código y se despliega solo" sigue viva en plataformas orientadas
-al desarrollador como **Vercel**, **Netlify**, **Render**, **Railway** o **Fly.io**,
-muy usadas para aplicaciones web y *frontends*, que por debajo funcionan con
-contenedores o funciones.
-
 ### Principales proveedores cloud de SaaS
 
   * Salesforce: es una plataforma líder de CRM (Customer Relationship management). Ayuda a las empresas a gestionar interacciones con los clientes, automatizar procesos de ventas, marketing y atención al cliente. También permite la personalización y programación de aplicaciones a través de su plataforma (con su propio lenguaje, Apex) y su *marketplace* de aplicaciones AppExchange.
