@@ -160,12 +160,39 @@ Existen otros como Microsoft Azure Kubernetes Service (AKS), IBM Cloud Kubernete
 
 ### Plataformas de desarrollo (en desuso)
 
-  * AWS - El más usado: Elastic Beanstalk (AWS EB)
-    * Uno de los PaaS más extendidos en la industria, cuyo propósito es el despliegue sencillo y autoescalable de web apps (en cualquiera de los lenguajes principales para ello)
-  * Google - El más usado: Google App Engine (GAE)
-    * Similar Elastic Beanstalk de AWS, Google App Engine tiene el propósito de hacer el despliegue de aplicaciones web lo más sencillo posible para el desarrollador. GAE viene con un beneficio añadido y es la posibilidad de añadir capas de seguridad a modo add-ons, algo que conllevaría una gestión muy costosa en cuanto a tiempo se refiere
-  * Microsoft Azure - El más usado: Azure App Service
-    * Azure ofrece PaaS similares a los de sus competidores, AWS y GCP, desde servicios de almacenamiento, a despliegue de web apps (Azure App Service)
+Fueron los primeros PaaS de cada nube: el desarrollador sube su código (Java, Python,
+Node.js, PHP...) y la plataforma se encarga de los servidores, el balanceo y el
+autoescalado.
+
+  * AWS: Elastic Beanstalk (AWS EB)
+    * Uno de los PaaS más extendidos en la industria, cuyo propósito es el despliegue sencillo y autoescalable de web apps (en cualquiera de los lenguajes principales para ello). Sigue soportado, pero sin apenas novedades. Su sucesor, **AWS App Runner**, dejó de aceptar clientes nuevos en abril de 2026, y AWS dirige ahora los despliegues sencillos hacia **Amazon ECS Express Mode** (contenedores) y **AWS Lambda** (funciones).
+  * Google: Google App Engine (GAE)
+    * Similar a Elastic Beanstalk de AWS, Google App Engine tiene el propósito de hacer el despliegue de aplicaciones web lo más sencillo posible para el desarrollador. Sigue disponible, pero la propia Google recomienda **Cloud Run** para las aplicaciones nuevas y ofrece herramientas para migrar de App Engine a Cloud Run.
+  * Microsoft Azure: Azure App Service
+    * Es el que mejor se mantiene: sigue siendo muy usado para webs y APIs, y admite tanto código como contenedores. Aun así, para aplicaciones nuevas basadas en contenedores Azure promueve **Azure Container Apps**.
+  * Salesforce: Heroku
+    * El PaaS que popularizó el modelo (`git push heroku main` y la aplicación queda desplegada). En febrero de 2026 Salesforce lo pasó a modo de **mantenimiento** (*sustaining engineering*): sin nuevas funcionalidades y sin nuevos contratos empresariales.
+
+**¿Por qué están en desuso?** Estos PaaS imponen su propio entorno de ejecución
+(versiones de lenguaje concretas, formas de desplegar propias de cada proveedor) y
+autoescalan de forma relativamente lenta, sin bajar a cero cuando no hay tráfico. Han
+sido sustituidos por dos modelos que veremos más adelante:
+
+* **CaaS** (*Container as a Service*): se despliega un **contenedor**, así que la
+  aplicación puede llevar cualquier lenguaje, versión o dependencia y es portable entre
+  nubes. Ejemplos: Google Cloud Run, Azure Container Apps, Amazon ECS (Fargate) y,
+  para casos más complejos, Kubernetes gestionado (GKE, EKS, AKS).
+* **FaaS** (*Function as a Service*): se despliegan **funciones** que se ejecutan en
+  respuesta a eventos y se pagan solo por el tiempo que se ejecutan. Ejemplos: AWS
+  Lambda, Google Cloud Run functions (antes Cloud Functions), Azure Functions.
+
+Ambos modelos escalan a cero (no pagas si no hay peticiones) y se tratan en el tema de
+[Serverless](./03-06-Serverless.md).
+
+La idea de "subo mi código y se despliega solo" sigue viva en plataformas orientadas
+al desarrollador como **Vercel**, **Netlify**, **Render**, **Railway** o **Fly.io**,
+muy usadas para aplicaciones web y *frontends*, que por debajo funcionan con
+contenedores o funciones.
 
 ### Principales proveedores cloud de SaaS
 
