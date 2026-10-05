@@ -5,35 +5,16 @@ se puede ampliar con dos modelos adicionales, más orientados a contenedores y f
 
 | | **Infraestructura (IaaS)** | **Plataforma (PaaS)** | **Contenedor (CaaS)** | **Función (FaaS)** | **Software (SaaS)** |
 |---|---|---|---|---|---|
-| **Ejemplos** | AWS EC2, GCE, Azure VMs | AWS Elastic Beanstalk, App Engine, Azure Web Apps, EKS, GKE, AKS | Fargate, Cloud Run / App Engine Flexible, Azure Container Instances | Lambda, GCF, Azure Functions | Salesforce, Oracle, SAP, Google Workspace, Office 365 |
-
-### Otros PaaS: Google App Engine (GAE)
-
-GAE nos brinda la oportunidad de las bondades de K8s, tales como el autoescalado, sin que tengamos que ser nosotros los que nos preocupemos por gestionar el cluster. Así, GAE se puede entender como un cluster de K8s gestionado automáticamente por Google. Es por ello por lo que todos nuestros esfuerzos se pueden centrar única y exclusivamente en el desarrollo del software (app), dejando la gestión del cluster a Google (sin más que especificar algunas propiedades del cluster para controlar costes, como pueden ser el máximo numero de instancias, etc.)
-
-Podemos entender GAE como el servicio ideal donde desplegar nuestros micro-servicios, los cuales conjuntamente constituyen un ecosistema interconectado, sobre el que podremos ir construyendo capas superiores de abstracción con el fin de acabar con el desarrollo monolítico.
-
-Una vez tengamos una versión inicial de nuestro aplicativo (app), podremos servirlo inmediatamente en uno de los dos entornos proporcionados por GAE:
-
-* **Standard**: En caso que nuestro aplicativo esté escrito en uno de los siguientes lenguajes y versiones:
-
-  * Python, Java, Node.js, PHP, Ruby, GO
-
-  Podremos disfrutar de un entorno "standard", de manera que GAE se encargará de contenerizar nuestro código y desplegarlo en instancias a muy bajo coste.
-
-* **Flexible**: En el caso que nuestro aplicativo esté contenerizado, y queramos lanzarlo como contenedor porque depende de librerías no estándares, o está escrito en un lenguaje no listado, o tiene unas necesidades computacionales algo más exigentes que las ofertadas en el entorno standard. El entorno de despliegue flexible nos permite una mayor personalización en términos de recursos, lo cual puede ser muy conveniente.
-
-Para un mayor entendimiento de la diferencia entre ambos modelos, podemos ver la [documentación oficial](https://cloud.google.com/appengine/docs/the-appengine-environments).
-
+| **Ejemplos** | AWS EC2, GCE, Azure VMs | AWS Elastic Beanstalk, App Engine, Azure Web Apps, EKS, GKE, AKS | Fargate, Cloud Run, Azure Container Apps / Container Instances | Lambda, GCF, Azure Functions | Salesforce, Oracle, SAP, Google Workspace, Office 365 |
 
 ### Aplicaciones Serverless: El espíritu cloud native
 
-Finalmente, incluso deshaciéndonos de la responsabilidad de mantener el cluster de K8s mediante el uso de GAE, tenemos una limitación y es que seguimos teniendo que mantener un mínimo de 1 instancia (nodo) funcionando 24/7. Sin embargo, nuestro objetivo último siempre ha sido el llegar a una arquitectura que sea lo más dinámica posible, con la idea en mente de escalar hasta cero instancias si fuera posible, de manera que solo pagásemos realmente por aquello que usamos. Y este es precisamente el objetivo de las dos últimos servicios de hosting de aplicativos que vamos a ver, que son:
+Las [plataformas de desarrollo clásicas](03-03-CloudComputing-Plataformas.md#plataformas-de-desarrollo-en-desuso) (PaaS como App Engine o Elastic Beanstalk) nos liberan de gestionar servidores, pero tienen una limitación: seguimos teniendo que mantener un mínimo de 1 instancia funcionando 24/7. Sin embargo, nuestro objetivo último siempre ha sido el llegar a una arquitectura que sea lo más dinámica posible, con la idea en mente de escalar hasta cero instancias si fuera posible, de manera que solo pagásemos realmente por aquello que usamos. Y este es precisamente el objetivo de las dos últimos servicios de hosting de aplicativos que vamos a ver, que son:
 
 * Cloud Functions
 * Cloud Run
 
-Ambos dos se centran en el concepto de escalar a cero, es decir, de deshacernos del concepto de "servidor" (*serverless*) mediante la gestión activa y automática de infraestructura y plataforma de Google. Como veremos ambos están íntimamente relacionados entre sí, y su diferencia tiene que ver con los environments standard y flexible de GAE.
+Ambos dos se centran en el concepto de escalar a cero, es decir, de deshacernos del concepto de "servidor" (*serverless*) mediante la gestión activa y automática de infraestructura y plataforma de Google. Como veremos ambos están íntimamente relacionados entre sí (de hecho, Google ha integrado Cloud Functions dentro de Cloud Run con el nombre de *Cloud Run functions*), y su diferencia está en qué desplegamos: en Cloud Functions, directamente el código de una función; en Cloud Run, un contenedor.
 
 Este paradigma de desarrollo se conoce como **Functions as a Service** (FaaS), dado que el objetivo principal es la programación de una funcionalidad (que en última instancia se entiende que se ejecutará en reacción a un evento dado).
 
