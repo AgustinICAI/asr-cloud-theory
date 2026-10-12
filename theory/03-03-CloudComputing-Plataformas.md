@@ -53,7 +53,7 @@ concentran casi dos tercios del mercado:
 | Microsoft Azure | 20% | 20% | ➡️ Estable |
 | Google Cloud | 15% | 13% | ⬆️ El que más crece de los tres |
 | Alibaba Cloud | ~5% | — | Líder en China |
-| Oracle Cloud | ~3% | — | ⬆️ Creciendo por la demanda de IA |
+| Oracle Cloud | ~3% | — | ⬆️ Creciendo |
 | IBM Cloud | ~2% | — | |
 | Salesforce | ~2% | — | |
 | Resto de proveedores | ~25% | — | |
